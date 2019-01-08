@@ -2,15 +2,14 @@
     <div class="gallery-slider">
         <div>
             <div class="gallery-slider_bacground">
+
                 <div class="gallery-slider-img">
                     <div class="gallery-background"
                          v-bind:style="{backgroundImage: 'url(' + pr.pictures[selectedNextHead].src + ')'}"
                          :class="{ animation: active }"
                          >
-                         
-                         </div>
+                    </div>
                 </div>
-
                 
                 <div class="inside-z">
                     <div class="gallery-box">
@@ -64,6 +63,9 @@ export default {
            this.selectedNextHead = getPreviousValidIndex(this.selectedNextHead, parts.pictures.length)
            this.active = true;
         }
+    },
+    mounted(){
+        console.log(this.slides);
     }
 }
 </script>

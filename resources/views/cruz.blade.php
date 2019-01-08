@@ -22,24 +22,19 @@
 				</div>
 				
 			</div>
-			<div class="cruz-video">
-				<div class="cruz-opacity">
-					<div class="player cruz-player"><span></span></div>
-					<div class="padding"></div>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
+			
+			@include('inc.video.cruz-video')
 
 			<div class="container">
-				<div class="row">
+				<div class="row mt-5">
 					<div class="d-flex center justify-content-between rame">
 						<div class="video-box">
 							<div class="video-box_img">
 								<img class="center" src="img/speed.png">
 							</div>
 							<div class="video-box_txt">
-								<p class="txt-bold">35 Mile</p>
-								<p class="text-center">Range</p>
+								<p class="txt-bold text-center">35 Mile</p>
+								<p class="text-center">Rangeffffffffff</p>
 							</div>
 						</div>
 
@@ -48,7 +43,7 @@
 								<img class="center" src="img/flag.png">
 							</div>
 							<div class="video-box_txt">
-								<p class="txt-bold">35 Mile</p>
+								<p class="txt-bold text-center">35 Mile</p>
 								<p class="text-center">Range</p>
 							</div>
 						</div>
@@ -58,7 +53,7 @@
 								<img class="center" src="img/batary.png">
 							</div>
 							<div class="video-box_txt">
-								<p class="txt-bold">35 Mile</p>
+								<p class="txt-bold text-center">35 Mile</p>
 								<p class="text-center">Range</p>
 							</div>
 						</div>

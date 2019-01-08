@@ -4,6 +4,8 @@ require('./bootstrap');
 import Vue from 'vue';
 import router from './routes';
 import VueRouter from 'vue-router';
+import VideoComponent from './components/VideoComponent.js'
+
 
 Vue.use(VueRouter); //npm install vue-router --save dev
 window.Vue = require('vue');
@@ -20,5 +22,8 @@ window.Vue = require('vue');
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    components:{
+        VideoComponent
+    }
 });

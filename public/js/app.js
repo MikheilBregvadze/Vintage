@@ -1790,7 +1790,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/parts */ "./resources/js/data/parts.js");
-//
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -1834,7 +1835,7 @@ function getNextValidIndex(index, length) {
   return incrementedIndex > length - 1 ? 0 : incrementedIndex;
 }
 
-/* harmony default export */ __webpack_exports__["default"] = ({
+/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
   data: function data() {
     return {
       pr: _data_parts__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -1855,7 +1856,9 @@ function getNextValidIndex(index, length) {
       this.active = true;
     }
   }
-});
+}, "mounted", function mounted() {
+  console.log(this.slides);
+}));
 
 /***/ }),
 
@@ -51356,7 +51359,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -51374,7 +51379,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
-  router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"]
+  router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"],
+  components: {
+    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }
 });
 
 /***/ }),
@@ -51434,6 +51442,87 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/VideoComponent.js":
+/*!***************************************************!*\
+  !*** ./resources/js/components/VideoComponent.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      videoElement: false,
+      paused: false,
+      computedWidth: 'rgba(253, 253, 253, 0.8)'
+    };
+  },
+  methods: {
+    updatePaused: function updatePaused(event) {
+      this.videoElement = event.target;
+      this.paused = event.target.paused;
+    },
+    play: function play() {
+      this.computedWidth = 'rgba(253, 253, 253, 0.4)';
+      this.videoElement.play();
+    },
+    pause: function pause() {
+      this.videoElement.pause();
+    }
+  },
+  computed: {
+    playing: function playing() {
+      return !this.paused;
+    }
+  } // export default {
+  //   data() {
+  //     return {
+  //       playing: false,
+  //     }
+  //   },
+  //   computed: {
+  //     paused() {
+  //       return !this.playing;
+  //     }
+  //   },
+  //   directives: {
+  //     play: {
+  //       bind(el, binding, vnode) {
+  //         el.addEventListener('playing', () => {
+  //           vnode.context[binding.expression] = !el.paused;
+  //         });
+  //         el.addEventListener('pause', () => {
+  //           vnode.context[binding.expression] = !el.paused;
+  //         });
+  //         vnode.context[binding.expression] = !el.paused;
+  //       },
+  //       update(el, binding) {
+  //         if (el.paused) {
+  //           if (binding.value) {
+  //             el.play();
+  //           }
+  //         } else if (!binding.value) {
+  //           el.pause();
+  //         }
+  //       }
+  //     }
+  //   },
+  //   methods: {
+  //     play() {
+  //       this.playing = true;
+  //     },
+  //     pause() {
+  //       this.playing = false;
+  //     }
+  //   }
+  // }
+
+});
 
 /***/ }),
 
