@@ -1,0 +1,132 @@
+.tableParent {
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  margin-top: 50px; }
+
+.col-lg-8, .col-lg-2, .col-lg-1 {
+  border-right: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc; }
+
+.tableTitle {
+  height: 50px;
+  line-height: 50px; }
+
+.col-lg-8 h4 {
+  line-height: 50px !important; }
+
+.row {
+  margin-left: 0 !important;
+  margin-right: 0px !important; }
+
+.tableRight {
+  border-right: none !important; }
+
+.tableText {
+  padding-bottom: 60px; }
+
+.tableText h3 {
+  color: #000 !important;
+  font-weight: bold !important;
+  margin: 60px 0 20px 0 !important;
+  font-size: 1.3em !important; }
+
+.tableText p {
+  font-size: 1em !important;
+  margin: 0 !important;
+  padding: 0 !important; }
+
+.tableCenter {
+  text-align: center; }
+
+.prev, .next {
+  background: none;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #dcdcdc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+  margin: 0 auto;
+  cursor: pointer; }
+
+.prev {
+  margin-top: 83px; }
+
+.number {
+  text-align: center;
+  margin: 20px 0;
+  font-weight: bold; }
+
+.top-arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg); }
+
+.bottom-arrow {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-bottom: 2px solid #000;
+  border-left: 2px solid #000;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); }
+
+.ball {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  background-color: #ff4848;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer; }
+
+.line-left {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg); }
+
+.line-right {
+  position: absolute;
+  width: 18px;
+  height: 2px;
+  background: #fff;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
+  margin: auto; }
+
+.check-out {
+  padding: 40px 0; }
+
+.check-out > a {
+  padding: 15px 60px;
+  background-color: #ff4848;
+  color: #fff;
+  border-radius: 5px; }
+  .check-out > a:hover {
+    color: #fff;
+    text-decoration: none; }
+.paypal {
+  border: 1px solid $grey;
+  border-radius: 5px; 
+  padding: 15px 60px;
+}
+.margin-left {
+  margin-right: 50px !important;
+}

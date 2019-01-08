@@ -1,0 +1,67 @@
+.cruz-slider {
+    background: url('/images/car2.png') no-repeat center/cover;
+}
+.cruz-gallery-title {
+	margin-top: 200px;
+	font-size: 60pt;
+	letter-spacing: 1px;
+}
+.cruz-gallery-para {
+	width: 450px;
+	margin: 0 auto;
+}
+.description-img{
+	max-width: 800px;
+}
+.description-img > img {
+	margin: 140px 0 0 150px;
+	width: 100%;
+}
+.bikes-zoomed {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background: #b9f0e8;
+}
+.bikes-description_text h1 {
+	margin: 40px 0;
+}
+.bikes-zoomed_img {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.bikes-zoomed img {
+	width: 100%;
+}
+.desc-right {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.desc-mile {
+	border: 1px solid $grey;
+	padding: 15px 30px;
+	border-radius: 50px;
+	margin-right: 50px;
+	margin-top: 40px;
+}
+.desc-mile p{
+	padding: 0 !important;
+	margin-top: 5px !important; 
+	margin-left: 20px;
+}
+.more-details {
+	margin-top: 40px;
+}
+.plus-details {
+	width: 35px;
+	height: 35px;
+	background: #b9f0e8;
+	line-height: 35px;
+	text-align: center;
+	border-radius: 50%;
+	color: $white;
+	font-size: 30pt;
+	margin-right: 30px;
+	cursor: pointer;
+}

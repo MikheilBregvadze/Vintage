@@ -1,0 +1,122 @@
+.title {
+  width: 100%;
+  text-align: center;
+  margin-top: 100px; }
+  
+.title h1 {
+  font-size: 3em;
+  font-weight: normal;
+  letter-spacing: 2px;
+  margin-bottom: 40px; }
+  
+.learnMore {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px 20px;
+  border: 2px solid #dcdcdc;
+  margin-left: 10px; }
+.learnMore:hover {
+  color: #000;
+  text-decoration: none; }
+  
+.bikes {
+  position: relative;
+  margin-top: 50px; }
+
+.box {
+  -ms-flex-preferred-size: 33.33333%;
+      flex-basis: 33.33333%;
+  border: 1px solid red;
+  height: 80px; }
+
+.row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -35px;
+  margin-left: -15px; }
+
+.bike-box {
+  margin-top: 20px;
+  position: relative !important;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+.bike-box:hover .hidden {
+  visibility: visible; }
+.bike-box:hover {
+  -webkit-box-shadow: -1px 3px 26px 5px #ccc;
+          box-shadow: -1px 3px 26px 5px #ccc; }
+.bike-box:hover .hover-ball {
+  visibility: visible;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+.bike-box:hover h4 {
+  font-weight: bold;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s; }
+.bike-box_img {
+  width: 180px;
+  margin: 30px auto;
+  height: 200px; 
+  margin-top: 70px;
+}
+.bike-box img {
+  width: 100%; }
+  
+.bike-box_desc {
+  margin-top: 0; }
+.bike-box_desc h4, .bike-box_desc p {
+  padding: 10px 20px 0 20px;
+  font-weight: normal;
+  text-align: center; }
+
+.hidden {
+  visibility: hidden;
+  width: 109%;
+  border-top: 1px solid #dcdcdc;
+  height: 100px;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  margin-top: 40px; 
+  margin-left: -15px;
+}
+.hidden-txt {
+  height: 50px;
+  padding-left: 40px;
+  line-height: 50px;
+  margin-left: 20px;
+  display: inline-block;
+  cursor: pointer;
+  border-left: 20px solid #ff4848; }
+
+.arrow {
+  width: 20px;
+  height: 100px;
+  border-left: 1px solid #dcdcdc;
+  display: inline-block;
+  line-height: 100px;
+  margin-left: 70px;
+  padding-left: 15px;
+  text-align: center;
+  cursor: pointer; }
+
+.hover-ball {
+  position: absolute;
+  visibility: hidden;
+  width: 80px;
+  height: 80px;
+  background: rgba(253, 253, 253, 0.9);
+  font-size: 2em;
+  line-height: 80px;
+  border-radius: 50%;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
+  color: black;
+  text-align: center;
+  cursor: pointer;
+  margin-left: calc(45% - 40px);
+  margin-top: 140px; }

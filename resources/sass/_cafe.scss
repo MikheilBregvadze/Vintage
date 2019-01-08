@@ -1,0 +1,49 @@
+.linkAfter {
+  margin-right: 30px; }
+  .linkAfter:hover {
+    text-decoration: none;
+    color: #000;
+    text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black; }
+
+.linkAfter::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 1px;
+  background-color: #dcdcdc;
+  margin-left: 16px; }
+
+.linkAfterLast:hover {
+  text-decoration: none;
+  color: #000;
+  text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black; }
+
+.linkAfter, .linkAfterLast {
+  color: #404040; }
+
+.Item {
+  color: #000;
+  font-weight: bold; }
+
+.circleLink {
+  padding: 8px 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  color: #404040;
+  font-size: 1.3em;
+  margin-right: 20px; }
+
+.circleLink:hover {
+  text-decoration: none;
+  color: #ff4848;
+  text-shadow: -0.25px -0.25px 0 #ff4848, 0.25px 0.25px #ff4848; }
+
+.nav-border {
+  margin-top: 100px;
+  padding: 20px 10px !important;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px; }
+
+.first-price {
+  font-size: 1.3em;
+  font-weight: bold; }

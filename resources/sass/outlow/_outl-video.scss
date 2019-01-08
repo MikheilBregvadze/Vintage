@@ -1,0 +1,40 @@
+.video {
+    background: url("/images/car3.png") no-repeat center/cover;
+    width: 100%;
+    margin-top: 30px; }
+  
+  .opacity {
+    width: 100%;
+    background: rgba(253, 253, 253, 0.8);
+    text-align: center; }
+    .opacity h1 {
+      padding-top: 180px; }
+    .opacity p {
+      padding-left: 300px;
+      padding-right: 300px;
+      margin-top: 20px; }
+  
+  .player {
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    margin: 100px auto;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px; }
+    .player span {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      margin-left: 5px;
+      margin-top: 22px;
+      border-width: 7px 15px 7px 0;
+      -webkit-transform: rotate(-180deg);
+              transform: rotate(-180deg);
+      border-color: transparent #ff4848 transparent transparent; }
+  
+  .padding {
+    padding-top: 30px; }
+

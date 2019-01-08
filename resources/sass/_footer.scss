@@ -1,0 +1,67 @@
+footer {
+  margin-top: 180px;
+}
+.footer-container {
+  max-width: 1270px;
+  margin: 0 auto;
+}
+.table-footer-txt p {
+  margin: 0 !important; }
+
+.table-footer-txt h3 {
+  font-size: 1.2em;
+  font-weight: bold; }
+
+.col-lg-6 {
+  padding: 0 !important;
+  margin: 0 !important; }
+ul{
+  list-style: none;
+}
+.links a {
+  color: $black;
+}
+.f-logo {
+  width: 70px !important;
+}
+.footer-right_border {
+  width: 290px;
+  height: 80px;
+  border: 1px solid $grey;
+  border-radius: 5px;
+}
+.bold {
+  padding: 0;
+  margin: 0;
+}
+.bolder {
+  font-weight: bold;
+}
+.footer-right_text {
+  padding-left: 30px;
+}
+.icons {
+  width: 60px;
+  height: 65px;
+  border-left: 1px solid $grey;
+}
+.fab {
+  font-size: 13pt;
+}
+.facebook {
+  width: 35px;
+  height: 35px;
+  background-color: $black;
+  color: $white;
+  opacity: 0.3;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 35px;
+  margin: 0 0 5px 10px;
+  cursor: pointer;
+}
+.facebook:hover {
+  background-color: $white;
+  color: blue;
+  opacity: 0.8;
+}
