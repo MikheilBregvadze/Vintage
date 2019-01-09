@@ -1790,8 +1790,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _data_parts__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/parts */ "./resources/js/data/parts.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -1835,16 +1833,13 @@ function getNextValidIndex(index, length) {
   return incrementedIndex > length - 1 ? 0 : incrementedIndex;
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
+/* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       pr: _data_parts__WEBPACK_IMPORTED_MODULE_0__["default"],
       selectedNextHead: 0,
       active: false
     };
-  },
-  mounted: function mounted() {
-    console.log(this.pr);
   },
   methods: {
     selectNextHead: function selectNextHead() {
@@ -1856,9 +1851,7 @@ function getNextValidIndex(index, length) {
       this.active = true;
     }
   }
-}, "mounted", function mounted() {
-  console.log(this.slides);
-}));
+});
 
 /***/ }),
 
@@ -51346,6 +51339,23 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/Events.js":
+/*!********************************!*\
+  !*** ./resources/js/Events.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
+
+var Events = new vue__WEBPACK_IMPORTED_MODULE_0___default.a();
+/* harmony default export */ __webpack_exports__["default"] = (Events);
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -51360,7 +51370,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 /* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
+/* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
+/* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
+
 
 
 
@@ -51381,7 +51395,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+    BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__["default"]
   }
 });
 
@@ -51442,6 +51458,73 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/BikeComponent.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/BikeComponent.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _data_product__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/product */ "./resources/js/data/product.js");
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      id: Number,
+      bikes: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc
+    };
+  },
+  methods: {
+    showconfirmation: function showconfirmation(id) {
+      this.id = id;
+      _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$emit('modal:open', {
+        id: this.id
+      });
+      console.log(this.bike);
+    }
+  },
+  mounted: function mounted() {
+    console.log(this.bikes);
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalConfirmation.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ModalConfirmation.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isVisible: false,
+      id: Number
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (id) {
+      _this.isVisible = true;
+      console.log(id);
+      _this.id = id;
+    });
+  }
+});
 
 /***/ }),
 
@@ -51526,6 +51609,43 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/data/images sync recursive \\.jpg$":
+/*!**********************************************!*\
+  !*** ./resources/js/data/images sync \.jpg$ ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./n1.jpg": "./resources/js/data/images/n1.jpg",
+	"./n2.jpg": "./resources/js/data/images/n2.jpg",
+	"./n3.jpg": "./resources/js/data/images/n3.jpg",
+	"./n4.jpg": "./resources/js/data/images/n4.jpg"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./resources/js/data/images sync recursive \\.jpg$";
+
+/***/ }),
+
 /***/ "./resources/js/data/images sync recursive \\.png$":
 /*!**********************************************!*\
   !*** ./resources/js/data/images sync \.png$ ***!
@@ -51536,7 +51656,8 @@ __webpack_require__.r(__webpack_exports__);
 var map = {
 	"./car1.png": "./resources/js/data/images/car1.png",
 	"./car2.png": "./resources/js/data/images/car2.png",
-	"./car3.png": "./resources/js/data/images/car3.png"
+	"./car3.png": "./resources/js/data/images/car3.png",
+	"./n5.png": "./resources/js/data/images/n5.png"
 };
 
 
@@ -51595,6 +51716,61 @@ module.exports = "/images/car3.png?7d170b2411e2ea683df2f7c48b7c7cac";
 
 /***/ }),
 
+/***/ "./resources/js/data/images/n1.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/data/images/n1.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/n1.jpg?be47de48dc73aaaf48138aac6ee80006";
+
+/***/ }),
+
+/***/ "./resources/js/data/images/n2.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/data/images/n2.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/n2.jpg?52e3004a67cc0b15377f940e2db8e6b8";
+
+/***/ }),
+
+/***/ "./resources/js/data/images/n3.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/data/images/n3.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/n3.jpg?4a494321b0a6d1236ceee7aec1396a4b";
+
+/***/ }),
+
+/***/ "./resources/js/data/images/n4.jpg":
+/*!*****************************************!*\
+  !*** ./resources/js/data/images/n4.jpg ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/n4.jpg?7c52bf40645c912cd11b1e9d628a5698";
+
+/***/ }),
+
+/***/ "./resources/js/data/images/n5.png":
+/*!*****************************************!*\
+  !*** ./resources/js/data/images/n5.png ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/n5.png?627d2cbe98e0abb0e3eec699a092edfd";
+
+/***/ }),
+
 /***/ "./resources/js/data/parts.js":
 /*!************************************!*\
   !*** ./resources/js/data/parts.js ***!
@@ -51616,6 +51792,55 @@ var parts = {
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (parts);
+
+/***/ }),
+
+/***/ "./resources/js/data/product.js":
+/*!**************************************!*\
+  !*** ./resources/js/data/product.js ***!
+  \**************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$");
+
+var products = {
+  desc: [{
+    id: 1,
+    description: 'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
+    title: 'Large Cyclops',
+    src: 'velo.png' //   src: images('./n1.jpg'),
+
+  }, {
+    id: 2,
+    description: 'A friendly robot head with two eyes and a smile -- great for domestic use.',
+    title: 'Friendly Bot',
+    src: 'velo1.png' //   src: images('./n2.jpg'),
+
+  }, {
+    id: 3,
+    description: 'A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.',
+    title: 'Shredder',
+    src: 'velo2.png' //   src: images('./n3.jpg'),
+
+  }, {
+    id: 4,
+    description: 'A simple single-eyed head -- simple and inexpensive.',
+    title: 'Small Cyclops',
+    src: 'velo3.png' //   src: images('./n4.jpg'),
+
+  }, {
+    id: 5,
+    description: 'A robot head with three oscillating eyes -- excellent for surveillance.',
+    title: 'Surveillance Bot',
+    src: 'velo4.png' //   src: images('./n5.png'),
+
+  }] // console.log(product.desc)
+
+};
+/* harmony default export */ __webpack_exports__["default"] = (products);
 
 /***/ }),
 

@@ -51,9 +51,7 @@ export default {
             active: false
         }
     },
-    mounted(){
-        console.log(this.pr)
-    },
+   
     methods: {
         selectNextHead() {
             this.selectedNextHead = getNextValidIndex(this.selectedNextHead, parts.pictures.length);
@@ -64,8 +62,6 @@ export default {
            this.active = true;
         }
     },
-    mounted(){
-        console.log(this.slides);
-    }
+    
 }
 </script>

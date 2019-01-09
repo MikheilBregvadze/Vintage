@@ -17,3 +17,7 @@ Route::get('/cruz', 'PagesController@cruz');
 Route::get('/scrambler', 'PagesController@scrambler');
 
 Route::resource('posts', 'PostsController');
+
+Route::get('/products', 'ProductsController@shop');
+// Route::get('shop', 'ProductsController@index')->name('shop');
+

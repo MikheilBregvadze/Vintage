@@ -19,8 +19,31 @@
   margin-left: 10px; }
 .learnMore:hover {
   color: #000;
-  text-decoration: none; }
-  
+  text-decoration: none; 
+}
+// .flex-message {
+//   position: fixed;
+//   /* display: flex; */
+//   /* width: 400px; */
+//   /* height: 400px; */
+//   /* border: 2px solid #ff4848; */
+//   left: 0;
+//   right: 0;
+//   top: 0;
+//   bottom: 0;
+//   background: rgba(0,0,0,.5);
+//   z-index: 100;
+// }
+.modal-confirm{
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 100;
+}
+
 .bikes {
   position: relative;
   margin-top: 50px; }
@@ -38,8 +61,14 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   margin-right: -35px;
-  margin-left: -15px; }
-
+  margin-left: -15px; 
+}
+.hover-ball a {
+  color: #000;
+}
+.hover-ball a:hover {
+  color: #000;
+}
 .bike-box {
   margin-top: 20px;
   position: relative !important;

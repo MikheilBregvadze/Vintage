@@ -5,6 +5,8 @@ import Vue from 'vue';
 import router from './routes';
 import VueRouter from 'vue-router';
 import VideoComponent from './components/VideoComponent.js'
+import BikeComponent from './components/BikeComponent.js'
+import ModalConfirmation from './components/ModalConfirmation.js'
 
 
 Vue.use(VueRouter); //npm install vue-router --save dev
@@ -24,6 +26,8 @@ const app = new Vue({
     el: '#app',
     router,
     components:{
-        VideoComponent
+        VideoComponent,
+        BikeComponent,
+        ModalConfirmation
     }
 });
