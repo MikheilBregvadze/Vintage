@@ -28,14 +28,14 @@
                     <div class="col-lg-1 tableRight"></div>
                 </div>
     <!-- cafe first bike section -->
-                <div class="row" v-for="item in retrievedObject">
+                <div class="row" v-for="item in items">
                     <div class="col-lg-8 ">
                         <div class="row">
                             <div class="tableImg col-sm-7 align-self-center">
                                 <img class="col-md-12" src="img/table1.png">
                             </div>
                             <div class="tableText col-sm-5">
-                            <h3>Tracker: II - $ 4,995.00 @{{ item }}</h3>
+                            <h3>Tracker: II - $ 4,995.00 @{{ item.title }}</h3>
                                 <p>Color: Intian Red</p>
                                 <p>Power: Street Mode - 20 MPH</p>
                                 <p>Control: Intian Red</p>
