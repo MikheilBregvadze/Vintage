@@ -15,4 +15,9 @@ export default {
                 this.id = id
             });
     },
+    methods: {
+        closeModal() {
+            this.isVisible = false;
+        }
+    },
 }

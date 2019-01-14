@@ -51523,6 +51523,11 @@ __webpack_require__.r(__webpack_exports__);
       console.log(id);
       _this.id = id;
     });
+  },
+  methods: {
+    closeModal: function closeModal() {
+      this.isVisible = false;
+    }
   }
 });
 

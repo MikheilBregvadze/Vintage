@@ -483,9 +483,14 @@ a:hover {
 
 .bike-box_desc h4,
 .bike-box_desc p {
-  padding: 10px 20px 0 20px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 50px;
+  max-width: 400px;
   font-weight: normal;
   text-align: center;
+  overflow: hidden;
 }
 
 .hidden {

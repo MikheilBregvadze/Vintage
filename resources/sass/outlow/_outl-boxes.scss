@@ -78,15 +78,18 @@
   visibility: visible; }
 .bike-box:hover {
   -webkit-box-shadow: -1px 3px 26px 5px #ccc;
-          box-shadow: -1px 3px 26px 5px #ccc; }
+          box-shadow: -1px 3px 26px 5px #ccc; 
+        }
 .bike-box:hover .hover-ball {
   visibility: visible;
   -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
+  transition: all 0.3s; 
+}
 .bike-box:hover h4 {
   font-weight: bold;
   -webkit-transition: all 0.2s;
-  transition: all 0.2s; }
+  transition: all 0.2s; 
+}
 .bike-box_img {
   width: 180px;
   margin: 30px auto;
@@ -97,11 +100,19 @@
   width: 100%; }
   
 .bike-box_desc {
-  margin-top: 0; }
+  margin-top: 0; 
+}
+
 .bike-box_desc h4, .bike-box_desc p {
-  padding: 10px 20px 0 20px;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 50px;
+  max-width: 400px;
   font-weight: normal;
-  text-align: center; }
+  text-align: center; 
+  overflow: hidden; 
+}
 
 .hidden {
   visibility: hidden;
