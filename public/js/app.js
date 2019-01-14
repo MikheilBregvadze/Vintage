@@ -51372,7 +51372,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
 /* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
 /* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
+/* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
+
 
 
 
@@ -51397,7 +51399,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   components: {
     VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__["default"],
     BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
-    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__["default"]
+    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 });
 
@@ -51478,7 +51481,8 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       id: Number,
-      bikes: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc
+      bikes: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      cart: []
     };
   },
   methods: {
@@ -51486,12 +51490,68 @@ __webpack_require__.r(__webpack_exports__);
       this.id = id;
       _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$emit('modal:open', {
         id: this.id
-      });
-      console.log(this.bike);
+      }); // console.log(this.bike);
+
+      var item = this.bikes[id];
+      var found = false;
+
+      for (var i = 0; i < this.cart.length; i++) {
+        if (this.cart[i].id === item.id) {
+          found = true;
+          this.cart[i].qty++;
+          break;
+        }
+      }
+
+      if (!found) {
+        this.cart.push({
+          id: item.id,
+          description: item.description,
+          title: item.title,
+          src: item.src,
+          qty: 1
+        });
+      }
     }
   },
+  mounted: function mounted() {// console.log(this.bikes[1]);
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/CartComponent.js":
+/*!**************************************************!*\
+  !*** ./resources/js/components/CartComponent.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var retrievedObject = localStorage.getItem('testObject');
+console.log(retrievedObject); // alert('dff')
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      text: 'blabla',
+      retrievedObject: [localStorage.getItem('testObject')]
+    };
+  },
+  // methods: {
+  //     addItem() {
+  //         alert('ggg')
+  //         this.retrievedObject = localStorage.getItem('testObject');
+  //         console.log(this.retrievedObject)
+  //     }
+  // },
   mounted: function mounted() {
-    console.log(this.bikes);
+    var items = [localStorage.getItem('testObject')];
+    console.log(items.length); // for(var i = 0; i < ) {
+    //     console.log(item)
+    // }
+    // localStorage.clear();
   }
 });
 
@@ -51506,27 +51566,43 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
+/* harmony import */ var _data_product__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/product */ "./resources/js/data/product.js");
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       isVisible: false,
-      id: Number
+      id: Number,
+      cart: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      testObject: []
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (id) {
+    _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$on('modal:open', function (id) {
       _this.isVisible = true;
-      console.log(id);
       _this.id = id;
     });
   },
   methods: {
     closeModal: function closeModal() {
       this.isVisible = false;
+    },
+    addToCart: function addToCart() {
+      this.isVisible = false;
+      this.testObject.push(this.cart[this.id.id]); // this.localStorageArray.push(testObject);
+      // for (var prop in testObject) {
+      // console.log('  ' + prop + ': ' + testObject[prop]);
+      // }
+
+      localStorage.setItem('testObject', JSON.stringify(this.testObject)); // var retrievedObject = localStorage.getItem('testObject');
+      // console.log('retrievedObject: ', JSON.parse(retrievedObject).title);
+      // var objLocalStorage = JSON.parse(retrievedObject);
+
+      console.log(this.testObject); // localStorage.clear();
     }
   }
 });
@@ -51813,31 +51889,31 @@ var images = __webpack_require__("./resources/js/data/images sync recursive \\.j
 
 var products = {
   desc: [{
-    id: 1,
+    id: 0,
     description: 'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
     title: 'Large Cyclops',
     src: 'velo.png' //   src: images('./n1.jpg'),
 
   }, {
-    id: 2,
+    id: 1,
     description: 'A friendly robot head with two eyes and a smile -- great for domestic use.',
     title: 'Friendly Bot',
     src: 'velo1.png' //   src: images('./n2.jpg'),
 
   }, {
-    id: 3,
+    id: 2,
     description: 'A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.',
     title: 'Shredder',
     src: 'velo2.png' //   src: images('./n3.jpg'),
 
   }, {
-    id: 4,
+    id: 3,
     description: 'A simple single-eyed head -- simple and inexpensive.',
     title: 'Small Cyclops',
     src: 'velo3.png' //   src: images('./n4.jpg'),
 
   }, {
-    id: 5,
+    id: 4,
     description: 'A robot head with three oscillating eyes -- excellent for surveillance.',
     title: 'Surveillance Bot',
     src: 'velo4.png' //   src: images('./n5.png'),

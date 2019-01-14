@@ -3,7 +3,7 @@ const images = require.context('./images', true, /\.jpg$/)
 const products = {
   desc: [
     {
-      id: 1,
+      id: 0,
       description:
         'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
       title: 'Large Cyclops',
@@ -11,14 +11,14 @@ const products = {
     //   src: images('./n1.jpg'),
     },
     {
-      id: 2,
+      id: 1,
       description: 'A friendly robot head with two eyes and a smile -- great for domestic use.',
       title: 'Friendly Bot',
       src: 'velo1.png'
     //   src: images('./n2.jpg'),
     },
     {
-      id: 3,
+      id: 2,
       description:
         'A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.',
       title: 'Shredder',
@@ -27,7 +27,7 @@ const products = {
      
     },
     {
-      id: 4,
+      id: 3,
       description:
         'A simple single-eyed head -- simple and inexpensive.',
       title: 'Small Cyclops',
@@ -35,7 +35,7 @@ const products = {
     //   src: images('./n4.jpg'),
     },
     {
-      id: 5,
+      id: 4,
       description:
         'A robot head with three oscillating eyes -- excellent for surveillance.',
       title: 'Surveillance Bot',

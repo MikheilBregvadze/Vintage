@@ -1,7 +1,7 @@
 <header>
     <div class="container">
         <div class="navigation">
-            <nav class="navbar navbar-inverse ">
+            <nav class="navbar navbar-inverse pl-0 pr-0">
                 <ul class="nav navbar-nav  flex-lg-row align-items-center">
                     <li class="navigation-circle">
                         <div class="top">

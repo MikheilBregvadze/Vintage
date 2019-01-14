@@ -7,7 +7,7 @@
                 <p>Are you sure!@{{ id }}</p>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-success">Yes</button>
+                  <button type="button" class="btn btn-success" v-on:click="addToCart">Yes</button>
                   <button type="button" class="btn btn-danger" v-on:click="closeModal">No</button>
                 </div>
               </div>
