@@ -51536,7 +51536,7 @@ var items = JSON.parse(retrievedObject); // console.log(items.length)
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      items: items,
+      items: [],
       length: items.length,
       total: 0
     };
@@ -51544,11 +51544,27 @@ var items = JSON.parse(retrievedObject); // console.log(items.length)
   methods: {
     inc: function inc(item) {
       item.qty++;
-      this.total += item.price;
+      item.price += item.price;
+      this.total += item.price; // item.price += newPrice.price
+      // this.total += item.price;
+
+      console.log(item);
     }
   },
   mounted: function mounted() {
-    this.total = this.items[0].price;
+    var bike = '';
+
+    if (items) {
+      for (var i = 0; i < items.length; i++) {
+        bike = items[i];
+        this.items.push(bike);
+        this.total += bike.price;
+      }
+    }
+
+    ;
+    console.log(this.itemPrices);
+    console.log(this.items);
   }
 });
 
@@ -51567,6 +51583,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
 
 
+var retrievedObject = localStorage.getItem('testObject');
+var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51582,7 +51600,19 @@ __webpack_require__.r(__webpack_exports__);
     _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$on('modal:open', function (id) {
       _this.isVisible = true;
       _this.id = id;
-    });
+    }); // localStorage.clear();
+
+    console.log(this.testObject);
+    var bike = '';
+
+    if (items) {
+      for (var i = 0; i < items.length; i++) {
+        bike = items[i];
+        this.testObject.push(bike);
+      }
+    }
+
+    ;
   },
   methods: {
     closeModal: function closeModal() {
@@ -51894,7 +51924,7 @@ var products = {
     description: 'Norco Sight NX VLT 2 Electric Mountain Bike Black/Copper (2019).',
     title: 'Friendly Bot',
     src: 'velo1.png',
-    price: 4458.00,
+    price: 2458.00,
     color: 'Yellow' //   src: images('./n2.jpg'),
 
   }, {
@@ -51908,6 +51938,7 @@ var products = {
 
   }, {
     id: 3,
+    qty: 1,
     description: 'A simple single-eyed head -- simple and inexpensive.',
     title: 'Small Cyclops',
     src: 'velo3.png',

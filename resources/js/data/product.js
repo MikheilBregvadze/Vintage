@@ -18,7 +18,7 @@ const products = {
       description: 'Norco Sight NX VLT 2 Electric Mountain Bike Black/Copper (2019).',
       title: 'Friendly Bot',
       src: 'velo1.png',
-      price: 4458.00,
+      price: 2458.00,
       color: 'Yellow',
     //   src: images('./n2.jpg'),
     },
@@ -35,6 +35,7 @@ const products = {
     },
     {
       id: 3,
+      qty: 1,
       description:'A simple single-eyed head -- simple and inexpensive.',
       title: 'Small Cyclops',
       src: 'velo3.png',

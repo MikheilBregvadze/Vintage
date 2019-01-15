@@ -1,6 +1,9 @@
 import product from '../data/product';
 import Events from '../Events.js'
 
+var retrievedObject = localStorage.getItem('testObject');
+var items = JSON.parse(retrievedObject);
+
 export default {
     data () {
         return {
@@ -16,6 +19,17 @@ export default {
                 this.isVisible = true
                 this.id = id
             });
+            // localStorage.clear();
+
+                console.log(this.testObject)
+            
+            var bike = '';
+            if(items) {
+                for(var i = 0; i < items.length; i++) {
+                    bike = items[i];
+                    this.testObject.push(bike)
+                }
+            };
     },
     methods: {
         closeModal() {
