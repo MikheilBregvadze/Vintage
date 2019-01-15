@@ -28,22 +28,12 @@ export default {
                     description: item.description,
                     title: item.title,
                     src: item.src,
+                    price: item.price,
+                    color: item.color,
                     qty: 1,
                 })
             }
         },
-        // addToCart() {
-        //     console.log(this.cart)
-        //     var testObject = this.cart;
-        //     for (var prop in testObject) {
-        //         console.log('  ' + prop + ': ' + testObject[prop]);
-        //     }
-        //     localStorage.setItem('testObject', JSON.stringify(testObject));
-        //     var retrievedObject = localStorage.getItem('testObject');
-        //     console.log('retrievedObject: ', JSON.parse(retrievedObject));
-        // }
-    },
-    mounted() {
-        // console.log(this.bikes[1]);
+       
     },
 }

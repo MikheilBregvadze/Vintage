@@ -32,11 +32,11 @@
                     <div class="col-lg-8 ">
                         <div class="row">
                             <div class="tableImg col-sm-7 align-self-center">
-                                <img class="col-md-12" src="img/table1.png">
+                                <img class="col-md-12" v-bind:src="'/img/' + item.src" alt="">
                             </div>
                             <div class="tableText col-sm-5">
-                            <h3>Tracker: II - $ 4,995.00 @{{ item.title }}</h3>
-                                <p>Color: Intian Red</p>
+                            <h3>Tracker: II - @{{ item.title }}</h3>
+                                <p>Color: @{{ item.color }}</p>
                                 <p>Power: Street Mode - 20 MPH</p>
                                 <p>Control: Intian Red</p>
                                 <p>Rack: No rack</p>

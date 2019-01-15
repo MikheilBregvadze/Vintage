@@ -25,14 +25,7 @@ export default {
         addToCart() {
             this.isVisible = false;
             this.testObject.push(this.cart[this.id.id]);
-            // this.localStorageArray.push(testObject);
-            // for (var prop in testObject) {
-                // console.log('  ' + prop + ': ' + testObject[prop]);
-            // }
             localStorage.setItem('testObject', JSON.stringify(this.testObject));
-            // var retrievedObject = localStorage.getItem('testObject');
-            // console.log('retrievedObject: ', JSON.parse(retrievedObject).title);
-            // var objLocalStorage = JSON.parse(retrievedObject);
 
                 console.log(this.testObject)
 

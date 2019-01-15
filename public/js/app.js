@@ -51509,12 +51509,12 @@ __webpack_require__.r(__webpack_exports__);
           description: item.description,
           title: item.title,
           src: item.src,
+          price: item.price,
+          color: item.color,
           qty: 1
         });
       }
     }
-  },
-  mounted: function mounted() {// console.log(this.bikes[1]);
   }
 });
 
@@ -51530,32 +51530,12 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var retrievedObject = localStorage.getItem('testObject');
-var items = JSON.parse(retrievedObject); // parseInt(retrievedObject)
-// retrievedObject = retrievedObject.split('[')
-// retrievedObject = retrievedObject[1].split('{')
-// alert('dff') 
-
-console.log(items);
+var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      text: 'blabla',
       items: items
     };
-  },
-  // methods: {
-  //     addItem() {
-  //         alert('ggg')
-  //         this.retrievedObject = localStorage.getItem('testObject');
-  //         console.log(this.retrievedObject)
-  //     }
-  // },
-  mounted: function mounted() {// var items = [localStorage.getItem('testObject')];
-    // console.log(items.length)
-    // for(var i = 0; i < ) {
-    // console.log(typeof this.retrievedObject)
-    // }
-    // localStorage.clear();
   }
 });
 
@@ -51597,15 +51577,8 @@ __webpack_require__.r(__webpack_exports__);
     },
     addToCart: function addToCart() {
       this.isVisible = false;
-      this.testObject.push(this.cart[this.id.id]); // this.localStorageArray.push(testObject);
-      // for (var prop in testObject) {
-      // console.log('  ' + prop + ': ' + testObject[prop]);
-      // }
-
-      localStorage.setItem('testObject', JSON.stringify(this.testObject)); // var retrievedObject = localStorage.getItem('testObject');
-      // console.log('retrievedObject: ', JSON.parse(retrievedObject).title);
-      // var objLocalStorage = JSON.parse(retrievedObject);
-
+      this.testObject.push(this.cart[this.id.id]);
+      localStorage.setItem('testObject', JSON.stringify(this.testObject));
       console.log(this.testObject); // localStorage.clear();
     }
   }
@@ -51889,42 +51862,53 @@ var parts = {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$");
+var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$"); //https://www.99bikes.com.au/checkout/cart/
+
 
 var products = {
   desc: [{
     id: 0,
     description: 'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
     title: 'Large Cyclops',
-    src: 'velo.png' //   src: images('./n1.jpg'),
+    src: 'velo.png',
+    price: '4458.00',
+    color: 'grey' //   src: images('./n1.jpg'),
 
   }, {
     id: 1,
-    description: 'A friendly robot head with two eyes and a smile -- great for domestic use.',
+    description: 'Norco Sight NX VLT 2 Electric Mountain Bike Black/Copper (2019).',
     title: 'Friendly Bot',
-    src: 'velo1.png' //   src: images('./n2.jpg'),
+    src: 'velo1.png',
+    price: '4458.00',
+    color: 'yellow' //   src: images('./n2.jpg'),
 
   }, {
     id: 2,
     description: 'A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.',
     title: 'Shredder',
-    src: 'velo2.png' //   src: images('./n3.jpg'),
+    src: 'velo2.png',
+    price: '4139.00',
+    color: 'red' //   src: images('./n3.jpg'),
 
   }, {
     id: 3,
     description: 'A simple single-eyed head -- simple and inexpensive.',
     title: 'Small Cyclops',
-    src: 'velo3.png' //   src: images('./n4.jpg'),
+    src: 'velo3.png',
+    price: '3218.00',
+    color: 'red' //   src: images('./n4.jpg'),
 
   }, {
     id: 4,
     description: 'A robot head with three oscillating eyes -- excellent for surveillance.',
     title: 'Surveillance Bot',
-    src: 'velo4.png' //   src: images('./n5.png'),
+    src: 'velo4.png',
+    price: '3458.00',
+    color: 'skyblue' //   src: images('./n5.png'),
 
-  }] // console.log(product.desc)
-
+  }]
 };
+console.log(products.desc);
 /* harmony default export */ __webpack_exports__["default"] = (products);
 
 /***/ }),
