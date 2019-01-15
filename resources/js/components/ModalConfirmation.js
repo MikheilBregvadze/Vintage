@@ -7,8 +7,7 @@ export default {
             isVisible: false,
             id: Number,
             cart: product.desc,
-            testObject: []
-
+            testObject: [],
         }
     },
 
@@ -31,6 +30,6 @@ export default {
 
             // localStorage.clear();
                
-        }
+        },
     },
 }

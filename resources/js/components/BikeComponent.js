@@ -5,7 +5,7 @@ export default {
         return {
             id: Number,
             bikes: product.desc,
-            cart: []
+            cart: [],
         }
     },
     methods: {
@@ -30,10 +30,9 @@ export default {
                     src: item.src,
                     price: item.price,
                     color: item.color,
-                    qty: 1,
+                    qty: item.qty,
                 })
             }
         },
-       
     },
 }

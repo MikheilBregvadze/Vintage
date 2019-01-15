@@ -51511,7 +51511,7 @@ __webpack_require__.r(__webpack_exports__);
           src: item.src,
           price: item.price,
           color: item.color,
-          qty: 1
+          qty: item.qty
         });
       }
     }
@@ -51530,12 +51530,25 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var retrievedObject = localStorage.getItem('testObject');
-var items = JSON.parse(retrievedObject);
+var items = JSON.parse(retrievedObject); // console.log(items.length)
+// Cookies.set('name', 'value');
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      items: items
+      items: items,
+      length: items.length,
+      total: 0
     };
+  },
+  methods: {
+    inc: function inc(item) {
+      item.qty++;
+      this.total += item.price;
+    }
+  },
+  mounted: function mounted() {
+    this.total = this.items[0].price;
   }
 });
 
@@ -51868,43 +51881,47 @@ var images = __webpack_require__("./resources/js/data/images sync recursive \\.j
 var products = {
   desc: [{
     id: 0,
+    qty: 1,
     description: 'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
     title: 'Large Cyclops',
     src: 'velo.png',
-    price: '4458.00',
-    color: 'grey' //   src: images('./n1.jpg'),
+    price: 4458.00,
+    color: 'Grey' //   src: images('./n1.jpg'),
 
   }, {
     id: 1,
+    qty: 1,
     description: 'Norco Sight NX VLT 2 Electric Mountain Bike Black/Copper (2019).',
     title: 'Friendly Bot',
     src: 'velo1.png',
-    price: '4458.00',
-    color: 'yellow' //   src: images('./n2.jpg'),
+    price: 4458.00,
+    color: 'Yellow' //   src: images('./n2.jpg'),
 
   }, {
     id: 2,
+    qty: 1,
     description: 'A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.',
     title: 'Shredder',
     src: 'velo2.png',
-    price: '4139.00',
-    color: 'red' //   src: images('./n3.jpg'),
+    price: 4139.00,
+    color: 'Red' //   src: images('./n3.jpg'),
 
   }, {
     id: 3,
     description: 'A simple single-eyed head -- simple and inexpensive.',
     title: 'Small Cyclops',
     src: 'velo3.png',
-    price: '3218.00',
-    color: 'red' //   src: images('./n4.jpg'),
+    price: 3218.00,
+    color: 'skyblue' //   src: images('./n4.jpg'),
 
   }, {
     id: 4,
+    qty: 1,
     description: 'A robot head with three oscillating eyes -- excellent for surveillance.',
     title: 'Surveillance Bot',
     src: 'velo4.png',
-    price: '3458.00',
-    color: 'skyblue' //   src: images('./n5.png'),
+    price: 3458.00,
+    color: 'grey' //   src: images('./n5.png'),
 
   }]
 };

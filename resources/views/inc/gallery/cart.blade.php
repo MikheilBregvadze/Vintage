@@ -9,7 +9,7 @@
                         <li><a class=" linkAfterLast" href="javascript:void(0)">Your Card</a></li>
                     </ul>
                     <ul class="nav navbar-nav flex-row align-items-center">
-                        <li><span class="Item">2 Item</span></li>
+                        <li><span class="Item">@{{ length }} Item</span></li>
                     </ul>
                 </div>
             </div>
@@ -48,15 +48,15 @@
                     <div class="col-lg-1">
                         <div class="d-flex">
                             <div class="column m-auto">
-                                <div class="prev"><span class="top-arrow"></span></div>
-                                <div class="number">1</div>
-                                <div class="next"><span class="bottom-arrow"></span></div>
+                                <div class="prev" v-on:click="inc(item)"><span class="top-arrow"></span></div>
+                                <div class="number">@{{ item.qty }}</div>
+                                <div class="next" v-on:click="dec(item)"><span class="bottom-arrow"></span></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-2 d-flex">
                         <div class="m-auto">
-                            <h3 class="first-price">4,995.00 $</h3>
+                        <h3 class="first-price">@{{ item.price }}.00$</h3>
                         </div>
                     </div>
                     <div class="col-lg-1 d-flex tableRight">
@@ -66,8 +66,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row col-lg-12 justify-content-end">
-                    <div class="col-lg-5 d-flex justify-content-between">
+                <div class="col-lg-8">
+                    <div class="d-flex justify-content-between">
                         <div class="d-flex">
                             <div class="paypal m-auto">
                                 <a href="javascript:void(0)"><img src="img/paypal.png"></a>
@@ -81,7 +81,7 @@
                         <div class="d-flex">
                             <div class="table-footer-txt m-auto">
                                 <p>Total</p>
-                                <h3>$ 4,995.00</h3>
+                                <h3>$ @{{total}}.00</h3>
                             </div>
                         </div>
                     </div>
