@@ -1,7 +1,5 @@
 var retrievedObject = localStorage.getItem('testObject');
 var items = JSON.parse(retrievedObject);
-// console.log(items.length)
-// Cookies.set('name', 'value');
 export default {
     data() {
         return {
@@ -13,14 +11,24 @@ export default {
     methods: {
         inc(item) {
             item.qty++;
-            item.price += item.price;
+            this.length++
+            // this.length = item.qty
             this.total += item.price;
-
-            // item.price += newPrice.price
-            // this.total += item.price;
-            console.log(item)
-		},
-    },
+        },
+        dec(item) {
+			item.qty--;
+			this.total -= item.price;
+			if(item.qty <= 0) {
+				for(var i = 0; i < this.items.length; i++) {
+					if(this.items[i].id === item.id) {
+                        // this.items.splice(i, 1);
+                        localStorage.removeItem(this.items.splice(i, 1))
+						break;
+					}
+				}
+			}
+		}
+	},
     mounted() {
         var bike = '';
             if(items) {
@@ -30,7 +38,5 @@ export default {
                     this.total += bike.price;
                 }
             };
-            console.log(this.itemPrices)
-            console.log(this.items)
     },
 }

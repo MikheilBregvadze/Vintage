@@ -30,9 +30,9 @@
     <!-- cafe first bike section -->
                 <div class="row" v-for="item in items">
                     <div class="col-lg-8 ">
-                        <div class="row">
+                        <div class="row justify-content-around">
                             <div class="tableImg col-sm-7 align-self-center">
-                                <img class="col-md-12" v-bind:src="'/img/' + item.src" alt="">
+                                <img class="col-md-12" v-bind:src="'/img/' + item.src">
                             </div>
                             <div class="tableText col-sm-5">
                             <h3>Tracker: II - @{{ item.title }}</h3>
@@ -56,7 +56,7 @@
                     </div>
                     <div class="col-lg-2 d-flex">
                         <div class="m-auto">
-                        <h3 class="first-price">@{{ item.price }}.00$</h3>
+                        <h3 class="first-price">@{{ item.price *  item.qty  }}.00$</h3>
                         </div>
                     </div>
                     <div class="col-lg-1 d-flex tableRight">

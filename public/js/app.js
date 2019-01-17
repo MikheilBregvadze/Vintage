@@ -51530,9 +51530,7 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 var retrievedObject = localStorage.getItem('testObject');
-var items = JSON.parse(retrievedObject); // console.log(items.length)
-// Cookies.set('name', 'value');
-
+var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51544,11 +51542,23 @@ var items = JSON.parse(retrievedObject); // console.log(items.length)
   methods: {
     inc: function inc(item) {
       item.qty++;
-      item.price += item.price;
-      this.total += item.price; // item.price += newPrice.price
-      // this.total += item.price;
+      this.length++; // this.length = item.qty
 
-      console.log(item);
+      this.total += item.price;
+    },
+    dec: function dec(item) {
+      item.qty--;
+      this.total -= item.price;
+
+      if (item.qty <= 0) {
+        for (var i = 0; i < this.items.length; i++) {
+          if (this.items[i].id === item.id) {
+            // this.items.splice(i, 1);
+            localStorage.removeItem(this.items.splice(i, 1));
+            break;
+          }
+        }
+      }
     }
   },
   mounted: function mounted() {
@@ -51563,8 +51573,6 @@ var items = JSON.parse(retrievedObject); // console.log(items.length)
     }
 
     ;
-    console.log(this.itemPrices);
-    console.log(this.items);
   }
 });
 

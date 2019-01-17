@@ -416,6 +416,10 @@ a:hover {
   z-index: 100;
 }
 
+.tableImg {
+  max-width: 33.333333% !important;
+}
+
 .bikes {
   position: relative;
   margin-top: 50px;
