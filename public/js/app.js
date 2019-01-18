@@ -51534,6 +51534,7 @@ var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      isShown: false,
       items: [],
       length: items.length,
       total: 0
@@ -51542,26 +51543,38 @@ var items = JSON.parse(retrievedObject);
   methods: {
     inc: function inc(item) {
       item.qty++;
-      this.length++; // this.length = item.qty
-
+      this.length++;
       this.total += item.price;
     },
     dec: function dec(item) {
       item.qty--;
+      this.length--;
       this.total -= item.price;
 
       if (item.qty <= 0) {
         for (var i = 0; i < this.items.length; i++) {
           if (this.items[i].id === item.id) {
-            // this.items.splice(i, 1);
-            localStorage.removeItem(this.items.splice(i, 1));
+            window.localStorage.removeItem(this.items.splice(i, 1));
+            localStorage.setItem('testObject', JSON.stringify(this.items));
+            console.log(this.items);
             break;
           }
+        }
+      }
+    },
+    deleteItem: function deleteItem(item) {
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id === item.id) {
+          window.localStorage.removeItem(this.items.splice(i, 1));
+          localStorage.setItem('testObject', JSON.stringify(this.items));
+          console.log(this.items);
+          break;
         }
       }
     }
   },
   mounted: function mounted() {
+    console.log(this.items);
     var bike = '';
 
     if (items) {
@@ -51570,9 +51583,14 @@ var items = JSON.parse(retrievedObject);
         this.items.push(bike);
         this.total += bike.price;
       }
+
+      if (this.length == 0) {
+        this.isShown = true;
+      }
     }
 
     ;
+    console.log(this.isShown);
   }
 });
 
@@ -51608,8 +51626,7 @@ var items = JSON.parse(retrievedObject);
     _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$on('modal:open', function (id) {
       _this.isVisible = true;
       _this.id = id;
-    }); // localStorage.clear();
-
+    });
     console.log(this.testObject);
     var bike = '';
 

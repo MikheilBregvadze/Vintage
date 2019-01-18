@@ -19,8 +19,6 @@ export default {
                 this.isVisible = true
                 this.id = id
             });
-            // localStorage.clear();
-
                 console.log(this.testObject)
             
             var bike = '';

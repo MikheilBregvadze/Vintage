@@ -1285,6 +1285,10 @@ ul {
   color: #fff;
 }
 
+.d-none {
+  display: none;
+}
+
 /*!
  * Bootstrap v4.2.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
