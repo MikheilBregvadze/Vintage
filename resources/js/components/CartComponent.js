@@ -24,23 +24,31 @@ export default {
 					if(this.items[i].id === item.id) {
                         window.localStorage.removeItem(this.items.splice(i, 1));
                         localStorage.setItem('testObject', JSON.stringify(this.items));
-                        console.log(this.items)
+                        hideElement()
 						break;
 					}
-				}
+                }
 			}
         },
+
         deleteItem(item) {
             for(var i = 0; i < this.items.length; i++) {
                 if(this.items[i].id === item.id) {
                     window.localStorage.removeItem(this.items.splice(i, 1));
                     localStorage.setItem('testObject', JSON.stringify(this.items));
                     console.log(this.items)
+                    hideElement()
                     break;
                 }
             }
+        },
+        hideElement() {
+            if(this.length == 0) {
+                this.isShown = true
+            }
         }
-	},
+    },
+    
     mounted() {
         console.log(this.items)
         var bike = '';
@@ -49,9 +57,6 @@ export default {
                     bike = items[i];
                     this.items.push(bike);
                     this.total += bike.price;
-                }
-                if(this.length == 0) {
-                    this.isShown = true;
                 }
             };
             console.log(this.isShown)

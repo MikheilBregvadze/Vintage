@@ -10,7 +10,24 @@
 .tableTitle {
   height: 50px;
   line-height: 50px; }
-
+.tableImg img{
+  width: 100% !important;
+}
+.price {
+    display: table;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.price1 {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center;
+}
+.priceChild{
+    display: table-cell;
+    vertical-align: middle;
+}
 .col-lg-8 h4 {
   line-height: 50px !important; }
 
@@ -48,9 +65,6 @@
   line-height: 25px;
   margin: 0 auto;
   cursor: pointer; }
-
-.prev {
-  margin-top: 83px; }
 
 .number {
   text-align: center;

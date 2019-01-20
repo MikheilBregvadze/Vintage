@@ -51556,7 +51556,7 @@ var items = JSON.parse(retrievedObject);
           if (this.items[i].id === item.id) {
             window.localStorage.removeItem(this.items.splice(i, 1));
             localStorage.setItem('testObject', JSON.stringify(this.items));
-            console.log(this.items);
+            hideElement();
             break;
           }
         }
@@ -51568,8 +51568,14 @@ var items = JSON.parse(retrievedObject);
           window.localStorage.removeItem(this.items.splice(i, 1));
           localStorage.setItem('testObject', JSON.stringify(this.items));
           console.log(this.items);
+          hideElement();
           break;
         }
+      }
+    },
+    hideElement: function hideElement() {
+      if (this.length == 0) {
+        this.isShown = true;
       }
     }
   },
@@ -51582,10 +51588,6 @@ var items = JSON.parse(retrievedObject);
         bike = items[i];
         this.items.push(bike);
         this.total += bike.price;
-      }
-
-      if (this.length == 0) {
-        this.isShown = true;
       }
     }
 
@@ -52186,8 +52188,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\vintage\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\vintage\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\vintages\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\vintages\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
