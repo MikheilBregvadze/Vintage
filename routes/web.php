@@ -21,3 +21,9 @@ Route::resource('posts', 'PostsController');
 Route::get('/products', 'ProductsController@shop');
 // Route::get('shop', 'ProductsController@index')->name('shop');
 
+
+
+// Route::get('/{any}', function(){
+//    return view('welcome');
+// })->where('any', '.*');
+

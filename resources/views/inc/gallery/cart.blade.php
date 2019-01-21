@@ -91,6 +91,6 @@
                 </div>
 
         </div>
-    <div class="text-center mt-5"><a href="#testino" onclick="scrollToTop(1000)">Add some Item?</a></div>
+    <div class="text-center mt-5"><a href="/#testino">Add some Item?</a></div>
 </div>
 </cart-component>
