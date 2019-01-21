@@ -34,7 +34,7 @@
 		@include('inc.gallery.gallery-slider')
 	</section>
 		<!--  second section --> <!--  second section -->
-	<section>
+	<section id="testino">
 		
 		@include('inc.gallery.gallery-bike')
 

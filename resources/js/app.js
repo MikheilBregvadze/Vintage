@@ -3,6 +3,7 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import router from './routes';
+import native from './components/native';
 import VueRouter from 'vue-router';
 import VideoComponent from './components/VideoComponent.js'
 import BikeComponent from './components/BikeComponent.js'

@@ -51368,11 +51368,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
-/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
-/* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
-/* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
-/* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
+/* harmony import */ var _components_native__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/native */ "./resources/js/components/native.js");
+/* harmony import */ var _components_native__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_components_native__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
+/* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
+/* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
+/* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
+/* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -51382,7 +51384,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]); //npm install vue-router --save dev
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]); //npm install vue-router --save dev
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
@@ -51397,10 +51400,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__["default"],
-    BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
-    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__["default"],
-    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"]
+    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+    BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"]
   }
 });
 
@@ -51534,21 +51537,21 @@ var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      isShown: false,
+      isShown: true,
       items: [],
-      length: items.length,
+      itemsLength: items.length,
       total: 0
     };
   },
   methods: {
     inc: function inc(item) {
       item.qty++;
-      this.length++;
+      this.itemsLength++;
       this.total += item.price;
     },
     dec: function dec(item) {
       item.qty--;
-      this.length--;
+      this.itemsLength--;
       this.total -= item.price;
 
       if (item.qty <= 0) {
@@ -51572,11 +51575,6 @@ var items = JSON.parse(retrievedObject);
           break;
         }
       }
-    },
-    hideElement: function hideElement() {
-      if (this.length == 0) {
-        this.isShown = true;
-      }
     }
   },
   mounted: function mounted() {
@@ -51592,7 +51590,6 @@ var items = JSON.parse(retrievedObject);
     }
 
     ;
-    console.log(this.isShown);
   }
 });
 
@@ -51734,6 +51731,30 @@ __webpack_require__.r(__webpack_exports__);
   // }
 
 });
+
+/***/ }),
+
+/***/ "./resources/js/components/native.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/native.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function scrollToTop(scrollDuration) {
+  var scrollHeight = window.scrollY,
+      scrollStep = Math.PI / (scrollDuration / 15),
+      cosParameter = scrollHeight / 2;
+  var scrollCount = 0,
+      scrollMargin,
+      scrollInterval = setInterval(function () {
+    if (window.scrollY != 0) {
+      scrollCount = scrollCount + 1;
+      scrollMargin = cosParameter - cosParameter * Math.cos(scrollCount * scrollStep);
+      window.scrollTo(0, scrollHeight - scrollMargin);
+    } else clearInterval(scrollInterval);
+  }, 15);
+}
 
 /***/ }),
 
@@ -52188,8 +52209,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\vintages\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\vintages\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\vintage\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\vintage\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

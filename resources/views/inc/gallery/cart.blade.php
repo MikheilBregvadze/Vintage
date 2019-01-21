@@ -9,7 +9,7 @@
                     <li><a class=" linkAfterLast" href="javascript:void(0)">Your Card</a></li>
                 </ul>
                 <ul class="align-items-center m-0">
-                    <li><span class="Item">@{{ length }} Item</span></li>
+                    <li><span class="Item">@{{ itemsLength }} Item</span></li>
                 </ul>
             </div>
         </div>
@@ -67,7 +67,7 @@
                     </div>
                 </div>
 
-                    <div class="col-lg-8" :class="{'d-none': isShown}">
+                    <div class="col-lg-8" v-if="items.length">
                         <div class="d-flex justify-content-between">
                             <div class="d-flex">
                                 <div class="paypal m-auto">
@@ -89,27 +89,8 @@
                     </div>
 
                 </div>
-                {{-- <div class="col-lg-8">
-                    <div class="d-flex justify-content-between">
-                        <div class="d-flex">
-                            <div class="paypal m-auto">
-                                <a href="javascript:void(0)"><img src="img/paypal.png"></a>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="check-out m-auto">
-                                <a href="javascript:void(0)">Checkout</a>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="table-footer-txt m-auto">
-                                <p>Total</p>
-                                <h3>$ @{{total}}.00</h3>
-                            </div>
-                        </div>
-                    </div>
-                </div> --}}
+
         </div>
-    <div class="text-center mt-5"><a href="/">Add some Item?</a></div>
+    <div class="text-center mt-5"><a href="#testino" onclick="scrollToTop(1000)">Add some Item?</a></div>
 </div>
 </cart-component>

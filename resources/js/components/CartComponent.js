@@ -3,21 +3,21 @@ var items = JSON.parse(retrievedObject);
 export default {
     data() {
         return {
-            isShown: false,
+            isShown: true,
             items: [],
-            length: items.length,
+            itemsLength: items.length,
             total: 0,
         }
     },
     methods: {
         inc(item) {
             item.qty++;
-            this.length++;
+            this.itemsLength++;
             this.total += item.price;
         },
         dec(item) {
             item.qty--;
-            this.length--
+            this.itemsLength--
 			this.total -= item.price;
 			if(item.qty <= 0) {
 				for(var i = 0; i < this.items.length; i++) {
@@ -42,11 +42,11 @@ export default {
                 }
             }
         },
-        hideElement() {
-            if(this.length == 0) {
-                this.isShown = true
-            }
-        }
+        // hideElement() {
+        //     if(this.length == 0) {
+        //         this.isShown = true
+        //     }
+        // }
     },
     
     mounted() {
@@ -59,6 +59,5 @@ export default {
                     this.total += bike.price;
                 }
             };
-            console.log(this.isShown)
     },
 }
