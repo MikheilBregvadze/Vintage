@@ -14,7 +14,7 @@
                         @include('inc.gallery.cart')    
                     </b-tab>
                     <b-tab title="Profile">
-                        {{-- @include('profile.user.profile') --}}
+                        @include('inc.gallery.profile')
                     </b-tab>
                     <b-tab title="Notifications">
                         {{-- @include('profile.user.notifications') --}}

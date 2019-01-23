@@ -10448,6 +10448,11 @@ video {
   padding: 0 !important;
 }
 
+.nav-item {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 .nav-link .active {
   margin: 0 !important;
   padding: 0 !important;
@@ -10484,7 +10489,8 @@ video {
   border-radius: 10px;
   color: #404040;
   font-size: 1.3em;
-  margin-right: 20px;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .nav-link:hover {
@@ -10500,8 +10506,6 @@ video {
 
 .nav-border {
   margin-top: 100px;
-  padding: 20px 10px !important;
-  border-radius: 5px;
 }
 
 .first-price {
