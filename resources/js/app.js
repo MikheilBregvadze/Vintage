@@ -9,7 +9,9 @@ import VideoComponent from './components/VideoComponent.js'
 import BikeComponent from './components/BikeComponent.js'
 import ModalConfirmation from './components/ModalConfirmation.js'
 import CartComponent from './components/CartComponent.js'
+import BootstrapVue from 'bootstrap-vue'
 
+Vue.use(BootstrapVue);
 
 Vue.use(VueRouter); //npm install vue-router --save dev
 window.Vue = require('vue');

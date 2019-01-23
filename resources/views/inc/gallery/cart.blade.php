@@ -1,18 +1,9 @@
 <cart-component inline-template>
 <div>
-        <div class="navigation">
-            <div class="navbar nav-border">
-                <ul class="row align-items-center m-0">
-                    <li><a class="circleLink" href="javascript:void(0)"><i class="fas fa-home"></i></a></li>
-                    <li><a class="linkAfter" href="javascript:void(0)">Home</a></li>
-                    <li><a class="linkAfter" href="#!">Shop</a></li>
-                    <li><a class=" linkAfterLast" href="javascript:void(0)">Your Card</a></li>
-                </ul>
-                <ul class="align-items-center m-0">
-                    <li><span class="Item">@{{ itemsLength }} Item</span></li>
-                </ul>
-            </div>
-        </div>
+        <ul class="align-items-center m-0">
+            <li><span class="Item">@{{ itemsLength }} Item</span></li>
+        </ul>
+            
         <div class="tableParent">
             <div class="tableParentBox tableParent-title column">
                 <div class="tableTitle row">
@@ -58,7 +49,7 @@
                                 <h3 class="first-price priceChild">@{{ item.price *  item.qty  }}.00$</h3>
                             </div>
                         </div>
-                        <div class="col-lg-1 price1">
+                        <div class="col-lg-1 price1" style="border-right: none !important">
                             <div class="ball" v-on:click="deleteItem(item)">
                                 <div class="line-left"></div>
                                 <div class="line-right"></div>
@@ -67,19 +58,20 @@
                     </div>
                 </div>
 
-                    <div class="col-lg-8" v-if="items.length">
-                        <div class="d-flex justify-content-between">
-                            <div class="d-flex">
+                    <div class="row" v-if="items.length">
+                        <div class="col-lg-6"></div>
+                        <div class="col-lg-6 d-flex justify-content-around align-items-center">
+                            <div class="">
                                 <div class="paypal m-auto">
                                     <a href="javascript:void(0)"><img src="img/paypal.png"></a>
                                 </div>
                             </div>
-                            <div class="d-flex">
+                            <div class="">
                                 <div class="check-out m-auto">
                                     <a href="javascript:void(0)">Checkout</a>
                                 </div>
                             </div>
-                            <div class="d-flex">
+                            <div class="">
                                 <div class="table-footer-txt m-auto">
                                     <p>Total</p>
                                     <h3>$ @{{total}}.00</h3>
@@ -87,10 +79,9 @@
                             </div>
                         </div>
                     </div>
-
+                    <div v-else class="text-center mt-5 mb-5"><a href="/#testino">Add some Item?</a></div>
                 </div>
 
         </div>
-    <div class="text-center mt-5"><a href="/#testino">Add some Item?</a></div>
 </div>
 </cart-component>
