@@ -1,10 +1,11 @@
 .nav-item .active {
     color: red !important;
     border: 1px solid#fff !important;
-    text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black !important;
+    // text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black !important;
     margin: 0 !important;
     padding: 0 !important;
     &:hover {
+    text-shadow: -0.25px -0.25px 0 red, 0.25px 0.25px red !important;
       border: 1px solid#fff !important;
     }
 }
@@ -12,10 +13,33 @@ ul, li:active, ul, li:focus  {
   outline: none;
 
 }
-
 .nav-item {
    margin-right: 30px;
+   position: relative;
 }
+.nav-item:first-child a::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 17px;
+  margin: 10px;
+  height: 20px;
+  background: url('/img/home.png') no-repeat center/cover;
+}
+.nav-item:first-child {
+  margin-left: 30px;
+}
+.nav-item:first-child a::after {
+  content: '';
+    display: block;
+    border: 1px solid $grey;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    position: relative;
+    top: 0;
+}
+
 .linkAfter::after {
   content: "";
   position: absolute;
@@ -37,7 +61,7 @@ ul, li:active, ul, li:focus  {
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   color: #404040;
-  font-size: 1.3em;
+  font-size: 1em;
   margin: 0 !important;
   padding: 0 !important;
   &:hover {
@@ -48,7 +72,10 @@ ul, li:active, ul, li:focus  {
   }
 }
 .nav-tabs {
-  border: none !important;
+  border: 1px solid #dcdcdc !important;
+  border-radius: 5px;
+  padding: 10px;
+  align-items: center;
 }
 
 .nav-border {

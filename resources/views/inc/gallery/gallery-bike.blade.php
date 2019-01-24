@@ -7,7 +7,6 @@
 </div>
 <div class="container">
     <div class="bikes">
-
         @include('inc.gallery.shopped-bike')
         @include('inc.gallery.modal')
     </div>

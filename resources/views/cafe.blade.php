@@ -4,7 +4,7 @@
         <div class="navigation">
             <div class="navbar nav-border">
                 @include('inc.gallery.cart-nav')
-                @include('inc.gallery.cart')
+                @include('inc.gallery.home.cart')
             </div>
         </div>
     </div>
