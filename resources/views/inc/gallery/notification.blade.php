@@ -5,7 +5,7 @@
         <div class="tableParent">
                 <div class="tableParentBox tableParent-title column">
                     <div class="tableTitle row">
-                        <h2>sfwf</h2>
+                        <h2>notification</h2>
                     </div>
                 </div>
             </div>

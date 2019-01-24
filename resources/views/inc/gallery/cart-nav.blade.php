@@ -1,10 +1,3 @@
-<ul class="row align-items-center m-0">
-    <li><a class="circleLink" href="javascript:void(0)"><i class="fas fa-home"></i></a></li>
-    <li><a class="linkAfter" href="javascript:void(0)">Home</a></li>
-    <li><a class="linkAfter" href="#!">Shop</a></li>
-    <li><a class=" linkAfterLast" href="javascript:void(0)">Your Card</a></li>
-</ul>
-
 @section('content')
 <div class="container">
         <div class="navigation">
@@ -17,7 +10,7 @@
                         @include('inc.gallery.profile')
                     </b-tab>
                     <b-tab title="Notifications">
-                        {{-- @include('profile.user.notifications') --}}
+                        @include('inc.gallery.notification')
                     </b-tab>
                 </b-tabs>
             </div>

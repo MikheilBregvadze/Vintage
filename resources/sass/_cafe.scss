@@ -1,24 +1,21 @@
 .nav-item .active {
     color: red !important;
-    border: none !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-.nav-item {
-  margin: 0 !important;
-    padding: 0 !important;
-}
-.nav-link .active {
+    border: 1px solid#fff !important;
+    text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black !important;
     margin: 0 !important;
     padding: 0 !important;
     &:hover {
-      border: none !important;
-      text-decoration: none;
-      color: #ff4848 !important;
+      border: 1px solid#fff !important;
     }
 }
+ul, li:active, ul, li:focus  {
+  outline: none;
 
+}
+
+.nav-item {
+   margin-right: 30px;
+}
 .linkAfter::after {
   content: "";
   position: absolute;
@@ -44,7 +41,7 @@
   margin: 0 !important;
   padding: 0 !important;
   &:hover {
-    border: none !important;
+    border: 1px solid #fff !important;
     text-decoration: none;
     color: #000;
     text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
