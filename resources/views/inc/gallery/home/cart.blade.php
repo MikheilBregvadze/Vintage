@@ -44,7 +44,7 @@
                                 <div class="next" v-on:click="dec(item)"><span class="bottom-arrow"></span></div>
                             </div>
                         </div>
-                        <div class="col-lg-2">
+                        <div class="col-lg-2 borderRb">
                             <div class="price">
                                 <h3 class="first-price priceChild">@{{ item.price *  item.qty  }}.00$</h3>
                             </div>
