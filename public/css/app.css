@@ -10506,6 +10506,8 @@ li:focus {
 .Item {
   color: #000;
   font-weight: bold;
+  margin-top: 40px;
+  color: #ff4848;
 }
 
 .nav-link {
@@ -10530,10 +10532,8 @@ li:focus {
   border-radius: 5px;
   padding: 10px;
   align-items: center;
-}
-
-.nav-border {
-  margin-top: 100px;
+  max-width: 1470px !important;
+  margin: 100px auto;
 }
 
 .first-price {
@@ -10610,10 +10610,17 @@ li:focus {
   color: #fff;
 }
 
+.searchFiledSize div {
+  height: 45px;
+}
+
+.searchFiledSize div:nth-child(even) {
+  background-color: #161616;
+}
+
 .tableParent {
   border: 1px solid #dcdcdc;
   border-radius: 5px;
-  margin-top: 50px;
 }
 
 .col-lg-8,

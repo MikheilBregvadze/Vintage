@@ -53,7 +53,10 @@ ul, li:active, ul, li:focus  {
 
 .Item {
   color: #000;
-  font-weight: bold; }
+  font-weight: bold; 
+  margin-top: 40px;
+  color: $red;
+}
 
 .nav-link {
   padding: 8px 10px;
@@ -75,11 +78,9 @@ ul, li:active, ul, li:focus  {
   border-radius: 5px;
   padding: 10px;
   align-items: center;
+  max-width: 1470px !important;
+  margin: 100px auto;
 }
-
-.nav-border {
-  margin-top: 100px;
-  }
 
 .first-price {
   font-size: 1.3em;
@@ -143,4 +144,10 @@ ul, li:active, ul, li:focus  {
   margin-top: 150px;
   background-color: #000;
   color: #fff;
+}
+.searchFiledSize div{
+  height: 45px;
+  &:nth-child(even) {
+    background-color: #161616;
+  }
 }
