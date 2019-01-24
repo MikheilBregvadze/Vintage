@@ -58,6 +58,7 @@
 				</div>
 
 				<div class="rate">
+					
 					<div class="rate-img center">
 						<img src="" alt="" class="rate-img">
 					</div>
@@ -71,6 +72,30 @@
 				</div>
 
 				<div class="right-section">
+
+						<div>
+								@php
+								$crypto = json_encode([
+												0 => 'bitcoin',
+												1 => 'Etherium',
+												2 => 'Dech'
+											]);
+							@endphp
+							<div class="col-md-4 form-group">
+									<select-component 
+										:options="{{$crypto}}" 
+										:name="'type'"
+										:placeholder="'Filter by type...'">
+									</select-component>      
+							</div>
+							<div class="col-md-4 form-group">
+									<select-component 
+										:options="{{$crypto}}" 
+										:name="'date'"
+										:placeholder="'Filter by date...'">
+									</select-component>      
+							</div>
+						   </div>
 					<div class="small"><img src="" alt=""></div>
 					<div class="middle"><img src="" alt=""></div>
 					<div class="smaller"><img src="" alt=""></div>

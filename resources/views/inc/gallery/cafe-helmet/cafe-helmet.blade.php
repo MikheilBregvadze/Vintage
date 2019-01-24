@@ -23,13 +23,36 @@
                     <div class="col-lg-2 borderNone">
                     <div class="borderAround">
                             <div >
-                                <div class="p-5">
+                                {{-- <div class="p-5">
                                     <h3>$ 79.00</h3>
                                     <p>Extra Taxes +4%</p>
                                 </div>
                                 <div class="d-flex height">
                                     <h5 class=" m-auto">Small - $ 79.00</h5>
+                                </div> --}}
+                               {{-- <div>
+                                    @php
+                                    $crypto = json_encode([
+                                                    0 => 'bitcoin',
+                                                    1 => 'Etherium',
+                                                    2 => 'Dech'
+                                                ]);
+                                @endphp
+                                <div class="col-md-4 form-group">
+                                        <select-component 
+                                            :options="{{$crypto}}" 
+                                            :name="'type'"
+                                            :placeholder="'Filter by type...'">
+                                        </select-component>      
                                 </div>
+                                <div class="col-md-4 form-group">
+                                        <select-component 
+                                            :options="{{$crypto}}" 
+                                            :name="'date'"
+                                            :placeholder="'Filter by date...'">
+                                        </select-component>      
+                                </div>
+                               </div> --}}
                             </div>
                         </div>
                     
