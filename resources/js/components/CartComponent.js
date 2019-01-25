@@ -4,6 +4,7 @@ export default {
     data() {
         return {
             isShown: true,
+            mounted: true,
             items: [],
             itemsLength: items.length,
             total: 0,
@@ -59,5 +60,6 @@ export default {
                     this.total += bike.price;
                 }
             };
+            console.log(this.mounted)
     },
 }

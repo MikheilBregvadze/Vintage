@@ -9,6 +9,7 @@ import VideoComponent from './components/VideoComponent.js'
 import BikeComponent from './components/BikeComponent.js'
 import ModalConfirmation from './components/ModalConfirmation.js'
 import CartComponent from './components/CartComponent.js'
+import AccessoriesComponent from './components/AccessoriesComponent.js'
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(BootstrapVue);
@@ -34,6 +35,7 @@ const app = new Vue({
         VideoComponent,
         BikeComponent,
         ModalConfirmation,
-        CartComponent
-    }
+        CartComponent,
+        AccessoriesComponent
+    },
 });

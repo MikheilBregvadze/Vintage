@@ -2,7 +2,7 @@
 <div>
         <div class="container">
             <div class="navigation">
-                <div class="nav-border">
+                <div class="nav-border displayNone" :class="{dBlock: mounted}">
                     <div class="Item text-right">@{{ itemsLength }} Item</div>
                     <div class="tableParent">
                         <div class="tableParentBox tableParent-title column">

@@ -69096,7 +69096,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
 /* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
 /* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/es/index.js");
+/* harmony import */ var _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AccessoriesComponent.js */ "./resources/js/components/AccessoriesComponent.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/es/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -69108,7 +69109,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_8__["default"]);
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]); //npm install vue-router --save dev
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -69128,7 +69130,8 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
     BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__["default"],
     ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__["default"],
-    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"]
+    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"],
+    AccessoriesComponent: _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"]
   }
 });
 
@@ -69189,6 +69192,25 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/AccessoriesComponent.js":
+/*!*********************************************************!*\
+  !*** ./resources/js/components/AccessoriesComponent.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
+  }
+});
 
 /***/ }),
 
@@ -69263,6 +69285,7 @@ var items = JSON.parse(retrievedObject);
   data: function data() {
     return {
       isShown: true,
+      mounted: true,
       items: [],
       itemsLength: items.length,
       total: 0
@@ -69315,6 +69338,7 @@ var items = JSON.parse(retrievedObject);
     }
 
     ;
+    console.log(this.mounted);
   }
 });
 

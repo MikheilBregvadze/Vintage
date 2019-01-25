@@ -10739,6 +10739,14 @@ select.form-control:focus::-ms-value {
   padding: 0 1px;
 }
 
+.dBlock {
+  display: block !important;
+}
+
+.displayNone {
+  display: none;
+}
+
 .tableParent {
   border: 1px solid #dcdcdc;
   border-radius: 5px;

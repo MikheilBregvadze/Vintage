@@ -255,7 +255,12 @@ select.form-control:focus::-ms-value {
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
 }
-
 .paddingLR {
   padding: 0 1px;
+}
+.dBlock {
+  display: block !important;
+}
+.displayNone {
+  display: none;
 }
