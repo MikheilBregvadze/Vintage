@@ -1789,8 +1789,7 @@ __webpack_require__.r(__webpack_exports__);
       height: 0
     };
   },
-  mounted: function mounted() {
-    console.log(this.options);
+  mounted: function mounted() {//console.log(this.options)
   },
   methods: {
     showOptions: function showOptions() {
@@ -69113,7 +69112,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_M
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]); //npm install vue-router --save dev
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('select-component', __webpack_require__(/*! ./components/SelectComponent.vue */ "./resources/js/components/SelectComponent.vue"));
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('select-component', __webpack_require__(/*! ./components/SelectComponent.vue */ "./resources/js/components/SelectComponent.vue").default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

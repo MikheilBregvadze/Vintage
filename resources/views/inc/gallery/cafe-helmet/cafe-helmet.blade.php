@@ -21,18 +21,34 @@
                         </div>
                     </div>
                     <div class="col-lg-2 borderNone">
-                    <div class="borderAround">
+                    <div class="">
                             <div >
-                                <div class="p-5">
-                                    <h3>$ 79.00</h3>
-                                    <p>Extra Taxes +4%</p>
+                                <div class="borderAround pt-5 pb-4">
+                                    <h3 class="text-center">$ 79.00</h3>
+                                    <p class="text-center">Extra Taxes +4%</p>
                                 </div>
                                 <div class="d-flex height">
-                                    <h5 class=" m-auto">Small - $ 79.00</h5>
+                                    <div class="filters">
+                                            @php
+                                            $crypto = json_encode([
+                                                            0 => 'Small - $ 79.00',
+                                                            1 => 'Medium - $ 96.00',
+                                                            2 => 'Large - $ 118.00'
+                                                        ]);
+                                            @endphp
+                                        <div class="form-group">
+                                                <select-component 
+                                                    :options="{{$crypto}}" 
+                                                    :name="'date'"
+                                                    :placeholder="'Small - $ 79.00'">
+                                                </select-component>      
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    
+                        
+                        <div class="paddingLR">
                             <div class="d-flex justify-content-between mt-2 mb-2">
                                 <div class="imgSizeRight">
                                         <img src="img/simg1.png" alt="">
@@ -45,7 +61,9 @@
                                 </div>
                             </div>
 
-                    <button class="myBtn" type="submit">Add to cart</button>
+                            <button class="myBtn" type="submit">Add to cart</button>
+                        </div>
+
                     </div>
                 </div>
             
