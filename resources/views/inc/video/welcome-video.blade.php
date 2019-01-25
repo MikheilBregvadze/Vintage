@@ -3,7 +3,7 @@ v-cloak
 inline-template>	
 	<div class="video">
 		<video id="videoElement"  v-on:canplay="updatePaused" v-on:playing="updatePaused" v-on:pause="updatePaused">
-			<source src="video/welcome.mov">
+			<source src="video/cruz.mp4">
 		</video>
 		<div class="opacity" v-bind:style="{ background: computedWidth }">
 			<h1>Handcrafted in California</h1>
