@@ -69204,11 +69204,30 @@ if (token) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _data_accessories__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/accessories */ "./resources/js/data/accessories.js");
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      mounted: true
+      mounted: true,
+      accessories: _data_accessories__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      items: []
     };
+  },
+  methods: {
+    addToStorage: function addToStorage() {
+      localStorage.setItem('items', JSON.stringify(this.items));
+    }
+  },
+  mounted: function mounted() {
+    var accessorie = '';
+
+    for (var i = 0; i < this.accessories.length; i++) {
+      accessorie = this.accessories[i];
+      this.items.push(accessorie);
+    }
   }
 });
 
@@ -69361,6 +69380,7 @@ var items = JSON.parse(retrievedObject);
       isVisible: false,
       id: Number,
       cart: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      accessories: accessories.desc,
       testObject: []
     };
   },
@@ -69570,6 +69590,105 @@ function scrollToTop(scrollDuration) {
     } else clearInterval(scrollInterval);
   }, 15);
 }
+
+/***/ }),
+
+/***/ "./resources/js/data/accessories.js":
+/*!******************************************!*\
+  !*** ./resources/js/data/accessories.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$"); //https://www.99bikes.com.au/checkout/cart/
+
+
+var accessories = {
+  desc: [{
+    id: 0,
+    qty: 1,
+    title: 'Large Cyclops',
+    src: 'ac1.png',
+    price: 158.00,
+    color: 'Grey' //   src: images('./n1.jpg'),
+
+  }, {
+    id: 1,
+    qty: 1,
+    title: 'Friendly Bot',
+    src: 'ac2.png',
+    price: 158.00,
+    color: 'Yellow' //   src: images('./n2.jpg'),
+
+  }, {
+    id: 2,
+    qty: 1,
+    title: 'Shredder',
+    src: 'ac3.png',
+    price: 139.00,
+    color: 'Red' //   src: images('./n3.jpg'),
+
+  }, {
+    id: 3,
+    qty: 1,
+    title: 'Small Cyclops',
+    src: 'ac4.png',
+    price: 118.00,
+    color: 'skyblue' //   src: images('./n4.jpg'),
+
+  }, {
+    id: 4,
+    qty: 1,
+    title: 'Surveillance Bot',
+    src: 'ac5.png',
+    price: 154.00,
+    color: 'greye' //   src: images('./n5.png'),
+
+  }, {
+    id: 5,
+    qty: 1,
+    title: 'Surveillance Bot',
+    src: 'ac6.png',
+    price: 159.00,
+    color: 'greyv' //   src: images('./n5.png'),
+
+  }, {
+    id: 6,
+    qty: 1,
+    title: 'Surveillance Bot',
+    src: 'ac7.png',
+    price: 153.00,
+    color: 'grery' //   src: images('./n5.png'),
+
+  }, {
+    id: 7,
+    qty: 1,
+    title: 'Surveillance Bot',
+    src: 'ac8.png',
+    price: 151.00,
+    color: 'greey' //   src: images('./n5.png'),
+
+  }, {
+    id: 8,
+    qty: 1,
+    title: 'Surveillance Bot',
+    src: 'ac9.png',
+    price: 151.00,
+    color: 'grwey' //   src: images('./n5.png'),
+
+  }, {
+    id: 9,
+    qty: 1,
+    title: 'Surveillance Bot',
+    src: 'ac10.png',
+    price: 153.00,
+    color: 'grqey' //   src: images('./n5.png'),
+
+  }]
+};
+/* harmony default export */ __webpack_exports__["default"] = (accessories);
 
 /***/ }),
 
