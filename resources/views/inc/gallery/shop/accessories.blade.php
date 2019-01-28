@@ -4,7 +4,7 @@
                 <div class="border-bottom mt-5">
                     <div class="d-flex align-items-center justify-content-between">
                         <h2>Accessories</h2>
-                        <span class="Item">Item</span>
+                    <span class="Item">@{{ itemsLength }} Item</span>
                     </div>
                 </div>
 

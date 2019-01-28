@@ -3,7 +3,7 @@
         <b-tab active>
             {{-- @include('inc.gallery.home.cart')     --}}
         </b-tab>
-        <b-tab title="Home" active>
+        <b-tab title="Your Cart" active>
             @include('inc.gallery.home.cart')    
         </b-tab>
         <b-tab title="Shop">

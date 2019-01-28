@@ -7,6 +7,7 @@ export default {
       mounted: true,
       accessories: accessories.desc,
       items: [],
+      itemsLength: ''
     }
   },
   methods: {
@@ -15,6 +16,8 @@ export default {
     }
   },
   mounted() {
+    this.itemsLength = this.accessories.length;
+    
     var accessorie = '';
     for(var i = 0; i < this.accessories.length; i++) {
       accessorie = this.accessories[i];

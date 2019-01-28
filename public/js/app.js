@@ -69213,7 +69213,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       mounted: true,
       accessories: _data_accessories__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
-      items: []
+      items: [],
+      itemsLength: ''
     };
   },
   methods: {
@@ -69222,6 +69223,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
+    this.itemsLength = this.accessories.length;
     var accessorie = '';
 
     for (var i = 0; i < this.accessories.length; i++) {
