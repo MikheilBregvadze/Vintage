@@ -69248,12 +69248,12 @@ __webpack_require__.r(__webpack_exports__);
       for (var i = 0; i < this.cart.length; i++) {
         if (this.cart[i].id === item.id) {
           found = true;
-          this.cart[i].qty++;
+          item.qty += 1;
           break;
         }
       }
 
-      if (!found) {
+      if (!found || item.qty < 2) {
         this.cart.push({
           id: item.id,
           description: item.description,
@@ -69318,15 +69318,12 @@ var items = JSON.parse(retrievedObject);
         if (this.items[i].id === item.id) {
           window.localStorage.removeItem(this.items.splice(i, 1));
           localStorage.setItem('testObject', JSON.stringify(this.items));
-          console.log(this.items);
-          hideElement();
           break;
         }
       }
     }
   },
   mounted: function mounted() {
-    console.log(this.items);
     var bike = '';
 
     if (items) {
@@ -69338,7 +69335,6 @@ var items = JSON.parse(retrievedObject);
     }
 
     ;
-    console.log(this.mounted);
   }
 });
 
@@ -69375,13 +69371,15 @@ var items = JSON.parse(retrievedObject);
       _this.isVisible = true;
       _this.id = id;
     });
-    console.log(this.testObject);
     var bike = '';
 
     if (items) {
       for (var i = 0; i < items.length; i++) {
         bike = items[i];
-        this.testObject.push(bike);
+
+        if (bike.qty < 2) {
+          this.testObject.push(bike);
+        }
       }
     }
 
@@ -69395,7 +69393,6 @@ var items = JSON.parse(retrievedObject);
       this.isVisible = false;
       this.testObject.push(this.cart[this.id.id]);
       localStorage.setItem('testObject', JSON.stringify(this.testObject));
-      console.log(this.testObject); // localStorage.clear();
     }
   }
 });
@@ -69822,7 +69819,6 @@ var products = {
 
   }]
 };
-console.log(products.desc);
 /* harmony default export */ __webpack_exports__["default"] = (products);
 
 /***/ }),

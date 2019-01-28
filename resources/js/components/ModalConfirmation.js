@@ -19,13 +19,14 @@ export default {
                 this.isVisible = true
                 this.id = id
             });
-                console.log(this.testObject)
             
             var bike = '';
             if(items) {
                 for(var i = 0; i < items.length; i++) {
                     bike = items[i];
-                    this.testObject.push(bike)
+                    if(bike.qty < 2) {
+                        this.testObject.push(bike)
+                    }
                 }
             };
     },
@@ -37,11 +38,6 @@ export default {
             this.isVisible = false;
             this.testObject.push(this.cart[this.id.id]);
             localStorage.setItem('testObject', JSON.stringify(this.testObject));
-
-                console.log(this.testObject)
-
-            // localStorage.clear();
-               
         },
     },
 }

@@ -18,11 +18,11 @@ export default {
             for(var i = 0; i < this.cart.length; i++) {
                 if(this.cart[i].id === item.id) {
                     found = true;
-					this.cart[i].qty++;
+                    item.qty += 1;
 					break;
                 }
             }
-            if(!found) {
+            if(!found || item.qty < 2) {
                 this.cart.push({
                     id: item.id,
                     description: item.description,

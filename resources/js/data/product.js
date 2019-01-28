@@ -55,5 +55,4 @@ const products = {
     }
   ]
 }
-console.log(products.desc)
 export default products

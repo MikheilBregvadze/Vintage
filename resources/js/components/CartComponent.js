@@ -37,21 +37,14 @@ export default {
                 if(this.items[i].id === item.id) {
                     window.localStorage.removeItem(this.items.splice(i, 1));
                     localStorage.setItem('testObject', JSON.stringify(this.items));
-                    console.log(this.items)
-                    hideElement()
                     break;
                 }
             }
         },
-        // hideElement() {
-        //     if(this.length == 0) {
-        //         this.isShown = true
-        //     }
-        // }
+       
     },
     
     mounted() {
-        console.log(this.items)
         var bike = '';
             if(items) {
                 for(var i = 0; i < items.length; i++) {
@@ -60,6 +53,5 @@ export default {
                     this.total += bike.price;
                 }
             };
-            console.log(this.mounted)
     },
 }
