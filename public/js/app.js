@@ -69096,10 +69096,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
 /* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
 /* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
-/* harmony import */ var _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AccessoriesComponent.js */ "./resources/js/components/AccessoriesComponent.js");
-/* harmony import */ var _components_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/ShopBikeComponent.js */ "./resources/js/components/ShopBikeComponent.js");
-/* harmony import */ var _components_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ApporelComponent.js */ "./resources/js/components/ApporelComponent.js");
-/* harmony import */ var _components_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/ShopAddedComponent.js */ "./resources/js/components/ShopAddedComponent.js");
+/* harmony import */ var _shop_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shop/AccessoriesComponent.js */ "./resources/js/shop/AccessoriesComponent.js");
+/* harmony import */ var _shop_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shop/ShopBikeComponent.js */ "./resources/js/shop/ShopBikeComponent.js");
+/* harmony import */ var _shop_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shop/ApporelComponent.js */ "./resources/js/shop/ApporelComponent.js");
+/* harmony import */ var _shop_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./shop/ShopAddedComponent.js */ "./resources/js/shop/ShopAddedComponent.js");
 /* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/es/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
@@ -69137,10 +69137,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__["default"],
     ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__["default"],
     CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"],
-    AccessoriesComponent: _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"],
-    ShopBikeComponent: _components_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__["default"],
-    ApporelComponent: _components_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__["default"],
-    ShopAddedComponent: _components_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__["default"]
+    AccessoriesComponent: _shop_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"],
+    ShopBikeComponent: _shop_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__["default"],
+    ApporelComponent: _shop_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__["default"],
+    ShopAddedComponent: _shop_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__["default"]
   }
 });
 
@@ -69201,92 +69201,6 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
-
-/***/ }),
-
-/***/ "./resources/js/components/AccessoriesComponent.js":
-/*!*********************************************************!*\
-  !*** ./resources/js/components/AccessoriesComponent.js ***!
-  \*********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _data_accessories__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/accessories */ "./resources/js/data/accessories.js");
-/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      mounted: true,
-      accessories: _data_accessories__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
-      items: [],
-      cart: [],
-      itemsLength: '',
-      id: Number
-    };
-  },
-  methods: {
-    addToStorage: function addToStorage(index) {
-      this.id = index;
-      var item = this.items[index];
-      var found = false;
-
-      for (var i = 0; i < this.items.length; i++) {
-        if (this.items[i].id === item.id) {
-          found = true;
-          break;
-        }
-      }
-
-      if (!found || item.qty < 2) {
-        this.cart.push({
-          id: item.id,
-          title: item.title,
-          src: item.src,
-          price: item.price,
-          color: item.color,
-          qty: item.qty
-        });
-      }
-
-      localStorage.setItem('cart', JSON.stringify(this.cart)); // console.log(this.cart)
-    }
-  },
-  mounted: function mounted() {
-    // localStorage.clear();
-    this.itemsLength = this.accessories.length;
-    var accessorie = '';
-
-    for (var i = 0; i < this.accessories.length; i++) {
-      accessorie = this.accessories[i];
-      this.items.push(accessorie);
-    }
-
-    console.log(this.accessories);
-  }
-});
-
-/***/ }),
-
-/***/ "./resources/js/components/ApporelComponent.js":
-/*!*****************************************************!*\
-  !*** ./resources/js/components/ApporelComponent.js ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      mounted: true
-    };
-  }
-});
 
 /***/ }),
 
@@ -69544,44 +69458,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/components/ShopAddedComponent.js":
-/*!*******************************************************!*\
-  !*** ./resources/js/components/ShopAddedComponent.js ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      mounted: true
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./resources/js/components/ShopBikeComponent.js":
-/*!******************************************************!*\
-  !*** ./resources/js/components/ShopBikeComponent.js ***!
-  \******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      mounted: true
-    };
-  }
-});
-
-/***/ }),
-
 /***/ "./resources/js/components/VideoComponent.js":
 /*!***************************************************!*\
   !*** ./resources/js/components/VideoComponent.js ***!
@@ -69684,105 +69560,6 @@ function scrollToTop(scrollDuration) {
     } else clearInterval(scrollInterval);
   }, 15);
 }
-
-/***/ }),
-
-/***/ "./resources/js/data/accessories.js":
-/*!******************************************!*\
-  !*** ./resources/js/data/accessories.js ***!
-  \******************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$"); //https://www.99bikes.com.au/checkout/cart/
-
-
-var accessories = {
-  desc: [{
-    id: 0,
-    qty: 1,
-    title: 'Large Cyclops',
-    src: 'ac1.png',
-    price: 158.00,
-    color: 'Grey' //   src: images('./n1.jpg'),
-
-  }, {
-    id: 1,
-    qty: 1,
-    title: 'Friendly Bot',
-    src: 'ac2.png',
-    price: 158.00,
-    color: 'Yellow' //   src: images('./n2.jpg'),
-
-  }, {
-    id: 2,
-    qty: 1,
-    title: 'Shredder',
-    src: 'ac3.png',
-    price: 139.00,
-    color: 'Red' //   src: images('./n3.jpg'),
-
-  }, {
-    id: 3,
-    qty: 1,
-    title: 'Small Cyclops',
-    src: 'ac4.png',
-    price: 118.00,
-    color: 'skyblue' //   src: images('./n4.jpg'),
-
-  }, {
-    id: 4,
-    qty: 1,
-    title: 'Surveillance Bot',
-    src: 'ac5.png',
-    price: 154.00,
-    color: 'greye' //   src: images('./n5.png'),
-
-  }, {
-    id: 5,
-    qty: 1,
-    title: 'Surveillance Bot',
-    src: 'ac6.png',
-    price: 159.00,
-    color: 'greyv' //   src: images('./n5.png'),
-
-  }, {
-    id: 6,
-    qty: 1,
-    title: 'Surveillance Bot',
-    src: 'ac7.png',
-    price: 153.00,
-    color: 'grery' //   src: images('./n5.png'),
-
-  }, {
-    id: 7,
-    qty: 1,
-    title: 'Surveillance Bot',
-    src: 'ac8.png',
-    price: 151.00,
-    color: 'greey' //   src: images('./n5.png'),
-
-  }, {
-    id: 8,
-    qty: 1,
-    title: 'Surveillance Bot',
-    src: 'ac9.png',
-    price: 151.00,
-    color: 'grwey' //   src: images('./n5.png'),
-
-  }, {
-    id: 9,
-    qty: 1,
-    title: 'Surveillance Bot',
-    src: 'ac10.png',
-    price: 153.00,
-    color: 'grqey' //   src: images('./n5.png'),
-
-  }]
-};
-/* harmony default export */ __webpack_exports__["default"] = (accessories);
 
 /***/ }),
 
@@ -70060,6 +69837,128 @@ var routes = [{
   mode: 'history',
   linkActiveClass: 'is-active'
 }));
+
+/***/ }),
+
+/***/ "./resources/js/shop/AccessoriesComponent.js":
+/*!***************************************************!*\
+  !*** ./resources/js/shop/AccessoriesComponent.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../data/accessories'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+!(function webpackMissingModule() { var e = new Error("Cannot find module '../../Events.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true,
+      accessories: !(function webpackMissingModule() { var e = new Error("Cannot find module '../../data/accessories'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()).desc,
+      items: [],
+      cart: [],
+      itemsLength: '',
+      id: Number
+    };
+  },
+  methods: {
+    addToStorage: function addToStorage(index) {
+      this.id = index;
+      var item = this.items[index];
+      var found = false;
+
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id === item.id) {
+          found = true;
+          break;
+        }
+      }
+
+      if (!found || item.qty < 2) {
+        this.cart.push({
+          id: item.id,
+          title: item.title,
+          src: item.src,
+          price: item.price,
+          color: item.color,
+          qty: item.qty
+        });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(this.cart)); // console.log(this.cart)
+    }
+  },
+  mounted: function mounted() {
+    // localStorage.clear();
+    this.itemsLength = this.accessories.length;
+    var accessorie = '';
+
+    for (var i = 0; i < this.accessories.length; i++) {
+      accessorie = this.accessories[i];
+      this.items.push(accessorie);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/shop/ApporelComponent.js":
+/*!***********************************************!*\
+  !*** ./resources/js/shop/ApporelComponent.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/shop/ShopAddedComponent.js":
+/*!*************************************************!*\
+  !*** ./resources/js/shop/ShopAddedComponent.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/shop/ShopBikeComponent.js":
+/*!************************************************!*\
+  !*** ./resources/js/shop/ShopBikeComponent.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
+  }
+});
 
 /***/ }),
 

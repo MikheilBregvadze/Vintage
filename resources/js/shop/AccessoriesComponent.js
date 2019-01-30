@@ -1,5 +1,5 @@
-import accessories from '../data/accessories';
-import Events from '../Events.js'
+import accessories from '../../data/accessories';
+import Events from '../../Events.js'
 
 export default {
   data() {
@@ -48,6 +48,5 @@ export default {
       accessorie = this.accessories[i];
       this.items.push(accessorie)
     }
-    console.log(this.accessories)
   }
 }

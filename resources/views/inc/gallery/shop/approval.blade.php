@@ -2,7 +2,7 @@
     <div class="displayNone" :class="{dBlock: mounted}">
         <div class="border-bottom mt-5">
             <div class="d-flex align-items-center justify-content-between">
-                <h2>Our Electric Bikes</h2>
+                <h2>Apporel</h2>
                 <span class="Item">Item</span>
             </div>
         </div>
