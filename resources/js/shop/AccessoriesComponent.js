@@ -1,5 +1,4 @@
-import accessories from '../../data/accessories';
-import Events from '../../Events.js'
+import accessories from '../data/accessories';
 
 export default {
   data() {
