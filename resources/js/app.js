@@ -10,6 +10,9 @@ import BikeComponent from './components/BikeComponent.js'
 import ModalConfirmation from './components/ModalConfirmation.js'
 import CartComponent from './components/CartComponent.js'
 import AccessoriesComponent from './components/AccessoriesComponent.js'
+import ShopBikeComponent from './components/ShopBikeComponent.js'
+import ApporelComponent from './components/ApporelComponent.js'
+import ShopAddedComponent from './components/ShopAddedComponent.js'
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(BootstrapVue);
@@ -36,6 +39,9 @@ const app = new Vue({
         BikeComponent,
         ModalConfirmation,
         CartComponent,
-        AccessoriesComponent
+        AccessoriesComponent,
+        ShopBikeComponent,
+        ApporelComponent,
+        ShopAddedComponent
     },
 });

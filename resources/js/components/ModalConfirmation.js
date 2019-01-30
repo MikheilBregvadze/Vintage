@@ -10,7 +10,6 @@ export default {
             isVisible: false,
             id: Number,
             cart: product.desc,
-            accessories: accessories.desc,
             testObject: [],
         }
     },

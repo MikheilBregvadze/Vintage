@@ -1,4 +1,4 @@
-<accessories-component inline-template>
+<shop-added-component inline-template>
     <div class="container">
             <div class="navigation">
                 <div class="nav-border">
@@ -72,10 +72,10 @@
                 </div>
             </div>
         </div>
-    </accessories-component>
+    </shop-added-component>
 
 
-<accessories-component inline-template>        
+<shop-added-component inline-template>        
         <div class="backgroundBlack displayNone" :class="{dBlock: mounted}">
             <div class="footer-container d-flex align-items-center">
                 <div class="col-xl-8 mb-5 pb-5 pr-5">
@@ -114,4 +114,4 @@
                 </div>
             </div>
         </div>
-</accessories-component>
+</shop-added-component>

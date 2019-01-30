@@ -12,7 +12,7 @@ export default {
         showconfirmation(id){
             this.id = id;
             Events.$emit('modal:open', {id: this.id});
-            // console.log(this.bike);
+            console.log(this.bikes[id]);
             var item = this.bikes[id]; 
             var found = false;
             for(var i = 0; i < this.cart.length; i++) {

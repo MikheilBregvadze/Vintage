@@ -69097,7 +69097,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
 /* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
 /* harmony import */ var _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AccessoriesComponent.js */ "./resources/js/components/AccessoriesComponent.js");
-/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/es/index.js");
+/* harmony import */ var _components_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/ShopBikeComponent.js */ "./resources/js/components/ShopBikeComponent.js");
+/* harmony import */ var _components_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ApporelComponent.js */ "./resources/js/components/ApporelComponent.js");
+/* harmony import */ var _components_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/ShopAddedComponent.js */ "./resources/js/components/ShopAddedComponent.js");
+/* harmony import */ var bootstrap_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! bootstrap-vue */ "./node_modules/bootstrap-vue/es/index.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -69110,7 +69113,10 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_9__["default"]);
+
+
+
+vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(bootstrap_vue__WEBPACK_IMPORTED_MODULE_12__["default"]);
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_3__["default"]); //npm install vue-router --save dev
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -69131,7 +69137,10 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
     BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__["default"],
     ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__["default"],
     CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"],
-    AccessoriesComponent: _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"]
+    AccessoriesComponent: _components_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"],
+    ShopBikeComponent: _components_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__["default"],
+    ApporelComponent: _components_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__["default"],
+    ShopAddedComponent: _components_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__["default"]
   }
 });
 
@@ -69214,15 +69223,40 @@ __webpack_require__.r(__webpack_exports__);
       mounted: true,
       accessories: _data_accessories__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
       items: [],
-      itemsLength: ''
+      cart: [],
+      itemsLength: '',
+      id: Number
     };
   },
   methods: {
-    addToStorage: function addToStorage() {
-      localStorage.setItem('items', JSON.stringify(this.items));
+    addToStorage: function addToStorage(index) {
+      this.id = index;
+      var item = this.items[index];
+      var found = false;
+
+      for (var i = 0; i < this.items.length; i++) {
+        if (this.items[i].id === item.id) {
+          found = true;
+          break;
+        }
+      }
+
+      if (!found || item.qty < 2) {
+        this.cart.push({
+          id: item.id,
+          title: item.title,
+          src: item.src,
+          price: item.price,
+          color: item.color,
+          qty: item.qty
+        });
+      }
+
+      localStorage.setItem('cart', JSON.stringify(this.cart)); // console.log(this.cart)
     }
   },
   mounted: function mounted() {
+    // localStorage.clear();
     this.itemsLength = this.accessories.length;
     var accessorie = '';
 
@@ -69230,6 +69264,27 @@ __webpack_require__.r(__webpack_exports__);
       accessorie = this.accessories[i];
       this.items.push(accessorie);
     }
+
+    console.log(this.accessories);
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/ApporelComponent.js":
+/*!*****************************************************!*\
+  !*** ./resources/js/components/ApporelComponent.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
   }
 });
 
@@ -69261,8 +69316,8 @@ __webpack_require__.r(__webpack_exports__);
       this.id = id;
       _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$emit('modal:open', {
         id: this.id
-      }); // console.log(this.bike);
-
+      });
+      console.log(this.bikes[id]);
       var item = this.bikes[id];
       var found = false;
 
@@ -69382,7 +69437,6 @@ var items = JSON.parse(retrievedObject);
       isVisible: false,
       id: Number,
       cart: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
-      accessories: accessories.desc,
       testObject: []
     };
   },
@@ -69487,6 +69541,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectComponent_vue_vue_type_template_id_54715746___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/js/components/ShopAddedComponent.js":
+/*!*******************************************************!*\
+  !*** ./resources/js/components/ShopAddedComponent.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/js/components/ShopBikeComponent.js":
+/*!******************************************************!*\
+  !*** ./resources/js/components/ShopBikeComponent.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      mounted: true
+    };
+  }
+});
 
 /***/ }),
 

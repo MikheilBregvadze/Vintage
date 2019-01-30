@@ -1,4 +1,4 @@
-<accessories-component inline-template>
+<apporel-component inline-template>
     <div class="displayNone" :class="{dBlock: mounted}">
         <div class="border-bottom mt-5">
             <div class="d-flex align-items-center justify-content-between">
@@ -24,4 +24,4 @@
             </div>
         </div>
     </div>
-</accessories-component>
+</apporel-component>

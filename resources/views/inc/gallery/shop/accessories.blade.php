@@ -9,9 +9,9 @@
                 </div>
 
                 <div class="row bikes">
-                    <div class="bike-box col-sm-12 col-md-4 col-xl-3 " v-for="accessorie in accessories">
+                    <div class="bike-box col-sm-12 col-md-4 col-xl-3 " v-for="(accessorie , index) in accessories">
                         <div>
-                            <div class="hover-ball" v-on:click="addToStorage">+</div>
+                            <div class="hover-ball" v-on:click="addToStorage(index)">+</div>
                             <div class="bike-box_img">
                                 <img v-bind:src="'/img/' + accessorie.src" alt="">
                             </div>
