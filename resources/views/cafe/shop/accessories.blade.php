@@ -1,5 +1,5 @@
 <accessories-component inline-template>
-   <div class="displayNone" :class="{dBlock: mounted}">
+   <div id="accessories" class="displayNone" :class="{dBlock: mounted}">
             <div>
                 <div class="border-bottom mt-5">
                     <div class="d-flex align-items-center justify-content-between">

@@ -1,5 +1,5 @@
 <shop-bike-component inline-template>    
-    <div class="displayNone" :class="{dBlock: mounted}">
+    <div id="electrickBikes" class="displayNone" :class="{dBlock: mounted}">
         <div class="border-bottom mt-5">
             <div class="d-flex align-items-center justify-content-between">
                 <h2>Our Electric Bikes</h2>

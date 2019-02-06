@@ -39,13 +39,13 @@ ul, li:active, ul, li:focus  {
     top: 0;
 }
 
-.linkAfter::after {
+.linkAfter::before {
   content: "";
   position: absolute;
   height: 20px;
   width: 1px;
   background-color: #dcdcdc;
-  margin-left: 16px; 
+  margin-left: -15px;
 }
 
 .linkAfter, .linkAfterLast {
@@ -292,4 +292,12 @@ select.form-control:focus::-ms-value {
 }
 .active {
   color: red !important;
+}
+
+.shop-nav li{
+  padding-right: 0 !important;
+  padding-left: 30px;
+  a {
+    color: #000 !important;
+  }
 }

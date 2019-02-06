@@ -1,5 +1,5 @@
 <apporel-component inline-template>
-    <div class="displayNone" :class="{dBlock: mounted}">
+    <div id="apparel" class="displayNone" :class="{dBlock: mounted}">
         <div class="border-bottom mt-5">
             <div class="d-flex align-items-center justify-content-between">
                 <h2>Apporel</h2>

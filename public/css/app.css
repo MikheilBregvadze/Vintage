@@ -10489,13 +10489,13 @@ li:focus {
   top: 0;
 }
 
-.linkAfter::after {
+.linkAfter::before {
   content: "";
   position: absolute;
   height: 20px;
   width: 1px;
   background-color: #dcdcdc;
-  margin-left: 16px;
+  margin-left: -15px;
 }
 
 .linkAfter,
@@ -10781,6 +10781,15 @@ select.form-control:focus::-ms-value {
 
 .active {
   color: red !important;
+}
+
+.shop-nav li {
+  padding-right: 0 !important;
+  padding-left: 30px;
+}
+
+.shop-nav li a {
+  color: #000 !important;
 }
 
 .tableParent {
