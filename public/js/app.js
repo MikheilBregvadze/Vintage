@@ -69662,6 +69662,57 @@ var accessories = {
 
 /***/ }),
 
+/***/ "./resources/js/data/bikes.js":
+/*!************************************!*\
+  !*** ./resources/js/data/bikes.js ***!
+  \************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$"); //https://www.99bikes.com.au/checkout/cart/
+
+
+var bikes = {
+  desc: [{
+    id: 0,
+    qty: 1,
+    title: 'Large Cyclops',
+    src: 'velo.png',
+    price: 4458.00,
+    color: 'Grey' //   src: images('./n1.jpg'),
+
+  }, {
+    id: 1,
+    qty: 1,
+    title: 'Friendly Bot',
+    src: 'velo1.png',
+    price: 4458.00,
+    color: 'Grey' //   src: images('./n2.jpg'),
+
+  }, {
+    id: 2,
+    qty: 1,
+    title: 'Shredder',
+    src: 'velo2.png',
+    price: 4458.00,
+    color: 'Grey' //   src: images('./n3.jpg'),
+
+  }, {
+    id: 3,
+    qty: 1,
+    title: 'Small Cyclops',
+    src: 'velo3.png',
+    price: 4458.00,
+    color: 'Grey' //   src: images('./n4.jpg'),
+
+  }]
+};
+/* harmony default export */ __webpack_exports__["default"] = (bikes);
+
+/***/ }),
+
 /***/ "./resources/js/data/images sync recursive \\.jpg$":
 /*!**********************************************!*\
   !*** ./resources/js/data/images sync \.jpg$ ***!
@@ -70049,11 +70100,21 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _data_bikes__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/bikes */ "./resources/js/data/bikes.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      mounted: true
+      mounted: true,
+      bikes: _data_bikes__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      items: [],
+      cart: [],
+      itemsLength: '',
+      id: Number
     };
+  },
+  mounted: function mounted() {
+    this.itemsLength = this.bikes.length;
   }
 });
 
