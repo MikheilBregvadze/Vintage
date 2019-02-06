@@ -69662,6 +69662,32 @@ var accessories = {
 
 /***/ }),
 
+/***/ "./resources/js/data/apporels.js":
+/*!***************************************!*\
+  !*** ./resources/js/data/apporels.js ***!
+  \***************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$"); //https://www.99bikes.com.au/checkout/cart/
+
+
+var apporels = {
+  desc: [{
+    id: 0,
+    qty: 1,
+    title: 'Large Cyclops',
+    src: 'ap1.png',
+    price: 140.00 //   src: images('./n1.jpg'),
+
+  }]
+};
+/* harmony default export */ __webpack_exports__["default"] = (apporels);
+
+/***/ }),
+
 /***/ "./resources/js/data/bikes.js":
 /*!************************************!*\
   !*** ./resources/js/data/bikes.js ***!
@@ -70062,11 +70088,21 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _data_apporels__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/apporels */ "./resources/js/data/apporels.js");
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      mounted: true
+      mounted: true,
+      apporels: _data_apporels__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      items: [],
+      cart: [],
+      itemsLength: '',
+      id: Number
     };
+  },
+  mounted: function mounted() {
+    this.itemsLength = this.apporels.length;
   }
 });
 
