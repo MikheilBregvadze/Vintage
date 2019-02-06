@@ -15,6 +15,8 @@ Route::get('/', 'PagesController@welcome');
 Route::get('/cafe', 'PagesController@cafe');
 Route::get('/cruz', 'PagesController@cruz');
 Route::get('/scrambler', 'PagesController@scrambler');
+Route::get('cafe/cart', 'PagesController@cart');
+Route::get('cafe/shop/shop', 'PagesController@shop');
 
 Route::resource('posts', 'PostsController');
 

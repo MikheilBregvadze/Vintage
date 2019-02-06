@@ -27,4 +27,14 @@ class PagesController extends Controller
     //     $title = "scrambler ";
     //     return view('scrambler')->with('title', $title);
     }
+    public function cart(){
+        return view('cafe.cart');
+    //     $title = "scrambler ";
+    //     return view('scrambler')->with('title', $title);
+    }
+    public function shop(){
+        return view('cafe.shop.index');
+    //     $title = "scrambler ";
+    //     return view('scrambler')->with('title', $title);
+    }
 }
