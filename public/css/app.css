@@ -10765,9 +10765,22 @@ select.form-control:focus::-ms-value {
   padding-right: 30px;
 }
 
+.nav-border ul li a:hover {
+  color: #000;
+  text-shadow: -0.25px -0.25px 0 black, 0.25px 0.25px black;
+}
+
 .nav-border ul {
   padding: 15px 0;
   margin: 0 !important;
+}
+
+.cafe-nav {
+  margin: 90px 0 70px 0;
+}
+
+.active {
+  color: red !important;
 }
 
 .tableParent {
