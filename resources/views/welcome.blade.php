@@ -35,8 +35,29 @@
 	</section>
 		<!--  second section --> <!--  second section -->
 	<section id="testino">
-		
-		@include('inc.gallery.gallery-bike')
+	
+			<div class="container">
+					<div class="title">
+						<h1>Our Bikes</h1>
+						<span>New Offering 0% Financing</span>
+						<a class="learnMore" href="javascript:void(0)">Learn More</a>
+					</div>
+				</div>
+		<div class="container">
+			<div class="bikes">
+				@if(count($product) > 0)
+				<div class="row">
+					@foreach($product as $item)
+						@include('inc.gallery.gallery-bike')
+					@endforeach
+				</div>
+				@else
+				<div class="text-center pb-5 pt-5">
+					Nothing Product Yet
+				</div>
+				@endif
+			</div>
+		</div>
 
 	</section>
 	<!-- third section --> <!-- third section -->

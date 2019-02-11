@@ -4,7 +4,7 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-body">
-                <p>Are you sure!@{{ id }}</p>
+                <p>Are you sure!{{$item->id}}</p>
                 </div>
                 <div class="modal-footer">
                   <button type="button" class="btn btn-success" v-on:click="addToCart">Yes</button>

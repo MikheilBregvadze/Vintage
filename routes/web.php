@@ -11,16 +11,19 @@
 |
 */
 
-Route::get('/', 'PagesController@welcome');
+// Route::get('/', 'PagesController@welcome');
 Route::get('/cafe', 'PagesController@cafe');
 Route::get('/cruz', 'PagesController@cruz');
 Route::get('/scrambler', 'PagesController@scrambler');
 Route::get('cafe/cart', 'PagesController@cart');
 Route::get('cafe/shop/shop', 'PagesController@shop');
 
-Route::resource('posts', 'PostsController');
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::resource('/', 'ProductController');
 
-Route::get('/products', 'ProductsController@shop');
+// Route::get('/products', 'ProductsController@shop');
 // Route::get('shop', 'ProductsController@index')->name('shop');
 
 

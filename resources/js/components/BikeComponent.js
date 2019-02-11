@@ -12,8 +12,8 @@ export default {
         showconfirmation(id){
             this.id = id;
             Events.$emit('modal:open', {id: this.id});
-            console.log(this.bikes[id]);
             var item = this.bikes[id]; 
+            console.log(this.id);
             var found = false;
             for(var i = 0; i < this.cart.length; i++) {
                 if(this.cart[i].id === item.id) {
