@@ -69360,6 +69360,7 @@ var items = JSON.parse(retrievedObject);
     _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$on('modal:open', function (id) {
       _this.isVisible = true;
       _this.id = id;
+      console.log(_this.id);
     });
     var bike = '';
 

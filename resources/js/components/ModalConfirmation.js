@@ -18,6 +18,7 @@ export default {
             Events.$on('modal:open', (id) => {
                 this.isVisible = true
                 this.id = id
+                console.log(this.id)
             });
             
             var bike = '';
