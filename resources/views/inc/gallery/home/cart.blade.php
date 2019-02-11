@@ -20,7 +20,7 @@
                             </div>
 
 
-                            <div >
+                            <div>
                                 <div class="d-flex" v-for="item in items">
                                     <div class="col-lg-8">
                                         <div class="d-flex justify-content-between">
@@ -59,29 +59,29 @@
                                 </div>
                             </div>
 
-                                <div class="row" v-if="items.length">
-                                    <div class="col-lg-6"></div>
-                                    <div class="col-lg-6 d-flex justify-content-around align-items-center">
-                                        <div class="">
-                                            <div class="paypal m-auto">
-                                                <a href="javascript:void(0)"><img src="img/paypal.png"></a>
-                                            </div>
+                            <div class="row" v-if="items.length">
+                                <div class="col-lg-6"></div>
+                                <div class="col-lg-6 d-flex justify-content-around align-items-center">
+                                    <div class="">
+                                        <div class="paypal m-auto">
+                                            <a href="javascript:void(0)"><img src="img/paypal.png"></a>
                                         </div>
-                                        <div class="">
-                                            <div class="check-out m-auto">
-                                                <a href="javascript:void(0)">Checkout</a>
-                                            </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="check-out m-auto">
+                                            <a href="javascript:void(0)">Checkout</a>
                                         </div>
-                                        <div class="">
-                                            <div class="table-footer-txt m-auto">
-                                                <p>Total</p>
-                                                <h3>$ @{{total}}.00</h3>
-                                            </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="table-footer-txt m-auto">
+                                            <p>Total</p>
+                                            <h3>$ @{{total}}.00</h3>
                                         </div>
                                     </div>
                                 </div>
-                                <div v-else class="text-center mt-5 mb-5"><a href="/#testino">Add some Item?</a></div>
                             </div>
+                            <div v-else class="text-center mt-5 mb-5"><a href="/#testino">Add some Item?</a></div>
+                        </div>
 
                     </div>
                 </div>
