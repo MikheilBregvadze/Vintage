@@ -52471,34 +52471,10 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    showconfirmation: function showconfirmation(id, item) {
-      // console.log(id)
-      this.id = id;
+    showconfirmation: function showconfirmation(item) {
       _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$emit('modal:open', {
-        id: this.id
+        item: item
       });
-      var item = this.bikes[id];
-      var found = false;
-
-      for (var i = 0; i < this.cart.length; i++) {
-        if (this.cart[i].id === item.id) {
-          found = true;
-          item.qty += 1;
-          break;
-        }
-      }
-
-      if (!found || item.qty < 2) {
-        this.cart.push({
-          id: item.id,
-          description: item.description,
-          title: item.title,
-          src: item.src,
-          price: item.price,
-          color: item.color,
-          qty: item.qty
-        });
-      }
     }
   }
 });
@@ -52592,6 +52568,7 @@ var items = JSON.parse(retrievedObject);
   data: function data() {
     return {
       id: Number,
+      item: {},
       isVisible: false,
       testObject: []
     };
@@ -52599,33 +52576,26 @@ var items = JSON.parse(retrievedObject);
   mounted: function mounted() {
     var _this = this;
 
-    _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (id) {
+    _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (obj) {
       _this.isVisible = true;
-      _this.id = id;
-      console.log(_this.id);
-    });
-    var bike = '';
-
-    if (items) {
-      for (var i = 0; i < items.length; i++) {
-        bike = items[i];
-
-        if (bike.qty < 2) {
-          this.testObject.push(bike);
-        }
-      }
-    }
-
-    ;
+      console.log(obj.item);
+    }); // localStorage.clear();
+    // var bike = '';
+    // if(items) {
+    //     for(var i = 0; i < items.length; i++) {
+    //         bike = items[i];
+    //         this.testObject.push(bike)
+    //     }
+    // };
   },
   methods: {
     closeModal: function closeModal() {
       this.isVisible = false;
     },
     addToCart: function addToCart() {
-      this.isVisible = false;
-      this.testObject.push(this.cart[this.id.id]);
-      localStorage.setItem('testObject', JSON.stringify(this.testObject));
+      this.isVisible = false; // console.log(this.item)
+      // this.testObject.push(this.cart[this.id.id]);
+      // localStorage.setItem('testObject', JSON.stringify(this.testObject));
     }
   }
 });

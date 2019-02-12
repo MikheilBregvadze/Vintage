@@ -7,27 +7,26 @@ export default {
     data () {
         return {
             id: Number,
+            item: {},
             isVisible: false,
             testObject: [],
         }
     },
 
     mounted(){
-            Events.$on('modal:open', (id) => {
+            Events.$on('modal:open', (obj) => {
                 this.isVisible = true
-                this.id = id
-                console.log(this.id)
+                console.log(obj.item)
+    
             });
-            
-            var bike = '';
-            if(items) {
-                for(var i = 0; i < items.length; i++) {
-                    bike = items[i];
-                    if(bike.qty < 2) {
-                        this.testObject.push(bike)
-                    }
-                }
-            };
+            // localStorage.clear();
+            // var bike = '';
+            // if(items) {
+            //     for(var i = 0; i < items.length; i++) {
+            //         bike = items[i];
+            //         this.testObject.push(bike)
+            //     }
+            // };
     },
     methods: {
         closeModal() {
@@ -35,8 +34,9 @@ export default {
         },
         addToCart() {
             this.isVisible = false;
-            this.testObject.push(this.cart[this.id.id]);
-            localStorage.setItem('testObject', JSON.stringify(this.testObject));
+            // console.log(this.item)
+            // this.testObject.push(this.cart[this.id.id]);
+            // localStorage.setItem('testObject', JSON.stringify(this.testObject));
         },
     },
 }
