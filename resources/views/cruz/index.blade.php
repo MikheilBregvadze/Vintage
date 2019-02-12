@@ -23,7 +23,7 @@
 				
 			</div>
 			
-			@include('inc.video.cruz-video')
+			@include('video.cruz-video')
 
 			<div class="container">
 				<div class="row mt-5">

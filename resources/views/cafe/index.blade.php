@@ -1,5 +1,7 @@
-@include('inc.navbar')
-
-    @yield('content')
-
-@include('inc.footer')
+@extends('layouts.app')
+@section('content')
+    <div class="container">	
+        @include('cafe.nav')
+        @include('cafe.home.cart')
+    </div>
+@endsection

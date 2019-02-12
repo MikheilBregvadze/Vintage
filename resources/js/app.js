@@ -3,7 +3,6 @@ require('./bootstrap');
 
 import Vue from 'vue';
 import router from './routes';
-import native from './components/native';
 import VueRouter from 'vue-router';
 import VideoComponent from './components/VideoComponent.js'
 import BikeComponent from './components/BikeComponent.js'
@@ -13,9 +12,7 @@ import AccessoriesComponent from './shop/AccessoriesComponent.js'
 import ShopBikeComponent from './shop/ShopBikeComponent.js'
 import ApporelComponent from './shop/ApporelComponent.js'
 import ShopAddedComponent from './shop/ShopAddedComponent.js'
-import BootstrapVue from 'bootstrap-vue'
 
-Vue.use(BootstrapVue);
 
 Vue.use(VueRouter); //npm install vue-router --save dev
 window.Vue = require('vue');

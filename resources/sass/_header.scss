@@ -19,10 +19,17 @@ img {
 .navigation {
     margin-top: 40px;
   }
+  
 .link{
       color: $main;
     margin-left: 15px;
   }
+.dropdown-menu-right {
+    left: 0 !important;
+}
+.navbar-expand-md .navbar-nav .nav-link {
+    padding: 0 !important;
+}
 .link:hover {
     text-decoration: none;
     color: $black;
@@ -63,8 +70,9 @@ img {
     border: 1px solid #dcdcdc;
     border-radius: 50%;
     vertical-align: middle;
-    cursor: pointer; }
-.navigation-circle:hover span {
+    cursor: pointer; 
+}
+.show > .navigation-circle span {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     -webkit-transform: rotate(90deg);
@@ -74,11 +82,11 @@ img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: 8px; }
+    margin-left: 8.5px; }
     .top span {
     display: block;
     width: 8px;
-    margin-top: 10px;
+    margin-top: 10.5px;
     margin-left: 2px;
     height: 8px;
     background-color: #000;
@@ -88,8 +96,8 @@ img {
     transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
     
 .bottom {
-    margin-top: 2px;
-    margin-left: 8px;
+    margin-top: 1px;
+    margin-left: 8.5px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }

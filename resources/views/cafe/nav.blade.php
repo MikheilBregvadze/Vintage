@@ -5,11 +5,10 @@
                 <li><a class="circleLink" href="/cafe"><i class="fas fa-home"></i></a></li>
                 <li><a style="color: black" href="/cafe">Home</a></li>
                 <li><a class="linkAfter" href="/cafe/shop">Shop</a></li>
+                <li><a class=" linkAfter" href="#">Your Card</a></li>
             </ul>
-            <ul class="d-flex shop-nav">
-                <li><a href="#electrickBikes">Our Electric Bikes</a></li>
-                <li><a href="#accessories">Accessories</a></li>
-                <li><a href="#apparel">Apparel</a></li>
-            </ul>
+            <div>
+                <span class="Item align-items-center"> Item</span>
+            </div>
         </div>
     </div>

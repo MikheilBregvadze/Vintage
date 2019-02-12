@@ -11,24 +11,15 @@
 |
 */
 
-// Route::get('/', 'PagesController@welcome');
-Route::get('/cafe', 'PagesController@cafe');
-Route::get('/cruz', 'PagesController@cruz');
-Route::get('/scrambler', 'PagesController@scrambler');
-Route::get('cafe/cart', 'PagesController@cart');
-Route::get('cafe/shop/shop', 'PagesController@shop');
-
 Route::get('/', function () {
     return view('welcome');
 });
-Route::resource('/', 'ProductController');
 
-// Route::get('/products', 'ProductsController@shop');
-// Route::get('shop', 'ProductsController@index')->name('shop');
+Auth::routes();
 
-
-
-// Route::get('/{any}', function(){
-//    return view('welcome');
-// })->where('any', '.*');
-
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cruz', 'CruzController@index')->name('cruz');
+Route::get('/scrambler', 'ScramblerController@index')->name('cruz');
+Route::get('/cafe', 'CafeController@index')->name('cruz');
+Route::get('/cafe/shop', 'ShopController@index')->name('cruz');
+Route::resource('/home', 'ProductController');

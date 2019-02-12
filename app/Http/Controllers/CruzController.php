@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Product;
-use Image;
-use File;
 
-class ProductController extends Controller
+class CruzController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +13,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::All();
-        return view('home.index', compact('product'));
+        return view('cruz.index');
     }
 
     /**
@@ -38,37 +34,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        $product = Product::create([
-            'title'       => $request->title,
-            'description' => $request->description,
-            'color'       => $request->color,
-            'price'       => $request->price,
-            'file'        => $request->file,
-        ]);
-        
-
-        $requestImage = $request->file;
-
-        $filename = uniqid(rand(1,9999)) . '.' . $requestImage->getClientOriginalExtension();
-        if (!is_dir(public_path() . '/img')) {
-            mkdir(public_path() . '/img', 0777, true);
-        }
-        if (!is_dir(public_path() . '/img/product')) {
-            mkdir(public_path() . '/img/product/', 0777, true);
-        }
-        if (!is_dir(public_path() . '/img/product/'.$product->id)) {
-            mkdir(public_path() . '/img/product/'.$product->id, 0777, true);
-        }
-            
-        $location = public_path('/img/product/'.$product->id.'/' . $filename);
-        Image::make($requestImage)->save($location);
-    
-        
-        $product->file = $filename;
-        $product->save();
-
-
-        return redirect('/index');
+        //
     }
 
     /**
