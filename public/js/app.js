@@ -52460,26 +52460,24 @@ if (token) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _data_product__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/product */ "./resources/js/data/product.js");
-/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
-
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       id: Number,
-      bikes: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      bikes: [],
       cart: []
     };
   },
   methods: {
-    showconfirmation: function showconfirmation(id) {
+    showconfirmation: function showconfirmation(id, item) {
+      // console.log(id)
       this.id = id;
-      _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$emit('modal:open', {
+      _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$emit('modal:open', {
         id: this.id
       });
       var item = this.bikes[id];
-      console.log(this.id);
       var found = false;
 
       for (var i = 0; i < this.cart.length; i++) {
@@ -52586,25 +52584,22 @@ var items = JSON.parse(retrievedObject);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _data_product__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../data/product */ "./resources/js/data/product.js");
-/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
-
+/* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
 
 var retrievedObject = localStorage.getItem('testObject');
 var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      isVisible: false,
       id: Number,
-      cart: _data_product__WEBPACK_IMPORTED_MODULE_0__["default"].desc,
+      isVisible: false,
       testObject: []
     };
   },
   mounted: function mounted() {
     var _this = this;
 
-    _Events_js__WEBPACK_IMPORTED_MODULE_1__["default"].$on('modal:open', function (id) {
+    _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (id) {
       _this.isVisible = true;
       _this.id = id;
       console.log(_this.id);
@@ -53144,70 +53139,6 @@ var parts = {
   }]
 };
 /* harmony default export */ __webpack_exports__["default"] = (parts);
-
-/***/ }),
-
-/***/ "./resources/js/data/product.js":
-/*!**************************************!*\
-  !*** ./resources/js/data/product.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var images = __webpack_require__("./resources/js/data/images sync recursive \\.jpg$"); //https://www.99bikes.com.au/checkout/cart/
-
-
-var products = {
-  desc: [{
-    id: 0,
-    qty: 1,
-    description: 'A robot head with an unusually large eye and teloscpic neck -- excellent for exploring high spaces.',
-    title: 'Large Cyclops',
-    src: 'velo.png',
-    price: 4458.00,
-    color: 'Grey' //   src: images('./n1.jpg'),
-
-  }, {
-    id: 1,
-    qty: 1,
-    description: 'Norco Sight NX VLT 2 Electric Mountain Bike Black/Copper (2019).',
-    title: 'Friendly Bot',
-    src: 'velo1.png',
-    price: 2458.00,
-    color: 'Yellow' //   src: images('./n2.jpg'),
-
-  }, {
-    id: 2,
-    qty: 1,
-    description: 'A large three-eyed head with a shredder for a mouth -- great for crushing light medals or shredding documents.',
-    title: 'Shredder',
-    src: 'velo2.png',
-    price: 4139.00,
-    color: 'Red' //   src: images('./n3.jpg'),
-
-  }, {
-    id: 3,
-    qty: 1,
-    description: 'A simple single-eyed head -- simple and inexpensive.',
-    title: 'Small Cyclops',
-    src: 'velo3.png',
-    price: 3218.00,
-    color: 'skyblue' //   src: images('./n4.jpg'),
-
-  }, {
-    id: 4,
-    qty: 1,
-    description: 'A robot head with three oscillating eyes -- excellent for surveillance.',
-    title: 'Surveillance Bot',
-    src: 'velo4.png',
-    price: 3458.00,
-    color: 'grey' //   src: images('./n5.png'),
-
-  }]
-};
-/* harmony default export */ __webpack_exports__["default"] = (products);
 
 /***/ }),
 

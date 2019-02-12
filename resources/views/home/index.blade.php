@@ -52,8 +52,8 @@
                     <bike-component
                     v-cloak 
                     inline-template>
-                            <div class="bike-box col-sm-12 col-md-4 col-xl-3">
-                                <div class="hover-ball" v-on:click="showconfirmation({{$item->id}})">+</div>
+            <div class="bike-box col-sm-12 col-md-4 col-xl-3" >
+                                <div class="hover-ball" v-on:click="showconfirmation({{$item->id}}, {{$item}})">+</div>
                                 <div class="bike-box_img">
                                     <img src="http://127.0.0.1:8001/img/product/{{ $item->id .'/'. $item->file }}" alt="">
                                 </div>

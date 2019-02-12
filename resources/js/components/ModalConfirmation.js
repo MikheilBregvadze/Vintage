@@ -1,4 +1,3 @@
-import product from '../data/product';
 import Events from '../Events.js'
 
 var retrievedObject = localStorage.getItem('testObject');
@@ -7,9 +6,8 @@ var items = JSON.parse(retrievedObject);
 export default {
     data () {
         return {
-            isVisible: false,
             id: Number,
-            cart: product.desc,
+            isVisible: false,
             testObject: [],
         }
     },

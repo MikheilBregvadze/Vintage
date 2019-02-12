@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use Image;
+use Image; // $composer require intervention/image
 use File;
 
 class ProductController extends Controller

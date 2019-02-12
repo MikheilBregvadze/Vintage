@@ -1,19 +1,19 @@
-import product from '../data/product';
 import Events from '../Events.js';
+
 export default {
     data () {
         return {
             id: Number,
-            bikes: product.desc,
+            bikes: [],
             cart: [],
         }
     },
     methods: {
-        showconfirmation(id){
+        showconfirmation(id, item){
+            // console.log(id)
             this.id = id;
             Events.$emit('modal:open', {id: this.id});
             var item = this.bikes[id]; 
-            console.log(this.id);
             var found = false;
             for(var i = 0; i < this.cart.length; i++) {
                 if(this.cart[i].id === item.id) {
