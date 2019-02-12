@@ -17,7 +17,7 @@ export default {
             Events.$on('modal:open', (obj) => {
                 this.isVisible = true
                 console.log(obj.item)
-    
+                
             });
             // localStorage.clear();
             // var bike = '';
