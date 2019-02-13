@@ -76,14 +76,15 @@
                             <a href=""><div class="logoImg"></div></a>
                             <!-- <a href=""><img src="img/logo.png" alt="logo"></a> -->
                         </div>
-                        @endguest
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav flex-row align-items-center ml-auto">
-                            <li><a class="linkRight shopNow" href="javascript:void(0)">Shop Now</a></li>
-                            <li><a class="linkRight zero" href="javascript:void(0)">0</a></li>
-                        </ul>
+                        <li><a class="linkRight shopNow" href="javascript:void(0)">Shop Now</a></li>
+                        <li><a class="linkRight zero" href="javascript:void(0)">0</a></li>
+                    </ul>
+                    @endguest
                 </div>
             </div>
         </nav>

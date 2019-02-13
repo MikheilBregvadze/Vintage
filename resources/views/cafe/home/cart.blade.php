@@ -24,10 +24,10 @@
                                             <div class="col-lg-8">
                                                 <div class="d-flex justify-content-between">
                                                     <div class="tableImg align-self-center pl-3">
-                                                        <img class="" v-bind:src="'/img/' + item.src">
+                                                        <img class="" v-bind:src=" 'http://127.0.0.1:8001/img/product/' + item.id + '/' + item.file">
                                                     </div>
                                                     <div class="tableText pr-5">
-                                                    <h3>Tracker: II - @{{ item.title }}</h3>
+                                                    <h3>Tracker: II - @{{ imgUrl }}</h3>
                                                         <p>Color: @{{ item.color }}</p>
                                                         <p>Power: Street Mode - 20 MPH</p>
                                                         <p>Control: Intian Red</p>
@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="col-lg-2 borderRb">
                                                 <div class="price">
-                                                    <h3 class="first-price priceChild">@{{ item.price *  item.qty  }}.00$</h3>
+                                                    <h3 class="first-price priceChild">@{{ item.price * item.qty  }}.00$</h3>
                                                 </div>
                                             </div>
                                             <div class="col-lg-1 price1" style="border-right: none !important">
@@ -79,7 +79,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div v-else class="text-center mt-5 mb-5"><a href="/#testino">Add some Item?</a></div>
+                                    <div v-else class="text-center mt-5 mb-5"><a href="/home/#testino">Add some Item?</a></div>
                                 </div>
         
                             </div>

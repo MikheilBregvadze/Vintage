@@ -52497,9 +52497,11 @@ var items = JSON.parse(retrievedObject);
     return {
       isShown: true,
       mounted: true,
+      bikeId: '',
       items: [],
       itemsLength: items.length,
-      total: 0
+      total: 0,
+      imgUrl: ''
     };
   },
   methods: {
@@ -52525,6 +52527,9 @@ var items = JSON.parse(retrievedObject);
       }
     },
     deleteItem: function deleteItem(item) {
+      item.qty--;
+      this.itemsLength--;
+
       for (var i = 0; i < this.items.length; i++) {
         if (this.items[i].id === item.id) {
           window.localStorage.removeItem(this.items.splice(i, 1));
@@ -52568,7 +52573,7 @@ var items = JSON.parse(retrievedObject);
   data: function data() {
     return {
       id: Number,
-      item: {},
+      items: {},
       isVisible: false,
       testObject: []
     };
@@ -52579,23 +52584,20 @@ var items = JSON.parse(retrievedObject);
     _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (obj) {
       _this.isVisible = true;
       console.log(obj.item);
+      var qty = 1;
+      obj.item.qty = qty;
+      _this.items = obj.item;
+      console.log(_this.items);
     }); // localStorage.clear();
-    // var bike = '';
-    // if(items) {
-    //     for(var i = 0; i < items.length; i++) {
-    //         bike = items[i];
-    //         this.testObject.push(bike)
-    //     }
-    // };
   },
   methods: {
     closeModal: function closeModal() {
       this.isVisible = false;
     },
     addToCart: function addToCart() {
-      this.isVisible = false; // console.log(this.item)
-      // this.testObject.push(this.cart[this.id.id]);
-      // localStorage.setItem('testObject', JSON.stringify(this.testObject));
+      this.isVisible = false;
+      this.testObject.push(this.items);
+      localStorage.setItem('testObject', JSON.stringify(this.testObject));
     }
   }
 });

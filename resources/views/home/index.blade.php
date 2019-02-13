@@ -5,7 +5,7 @@
 		<div class="container">
 			<div class="background">
 				<div class="bgimg">
-					<img src="img/outlaw.png" alt="background">
+					<img src="/img/outlaw.png" alt="background">
 				</div>
 				<div class="row">
 					<div class="col-12">
@@ -52,7 +52,7 @@
                             <div class="bike-box col-sm-12 col-md-4 col-xl-3" >
                                 <div class="hover-ball" v-on:click="showconfirmation({{$item}})">+</div>
                                 <div class="bike-box_img">
-                                    <img src="http://127.0.0.1:8001/img/product/{{ $item->id .'/'. $item->file }}" alt="">
+                                    <img src="http://127.0.0.1:8001/img/product/{{ $item->id .'/'. $item->file }}" alt="picture">
                                 </div>
                                 <div class="bike-box_desc">
                                     <h4>{{ $item->title }}</h4>

@@ -5,9 +5,11 @@ export default {
         return {
             isShown: true,
             mounted: true,
+            bikeId: '',
             items: [],
             itemsLength: items.length,
             total: 0,
+            imgUrl: '',
         }
     },
     methods: {
@@ -33,6 +35,8 @@ export default {
         },
 
         deleteItem(item) {
+            item.qty--;
+            this.itemsLength--
             for(var i = 0; i < this.items.length; i++) {
                 if(this.items[i].id === item.id) {
                     window.localStorage.removeItem(this.items.splice(i, 1));
@@ -41,7 +45,6 @@ export default {
                 }
             }
         },
-       
     },
     
     mounted() {

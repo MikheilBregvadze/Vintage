@@ -7,7 +7,7 @@ export default {
     data () {
         return {
             id: Number,
-            item: {},
+            items: {},
             isVisible: false,
             testObject: [],
         }
@@ -17,16 +17,12 @@ export default {
             Events.$on('modal:open', (obj) => {
                 this.isVisible = true
                 console.log(obj.item)
-                
+                var qty = 1
+                obj.item.qty = qty
+                this.items = obj.item
+                console.log(this.items)
             });
             // localStorage.clear();
-            // var bike = '';
-            // if(items) {
-            //     for(var i = 0; i < items.length; i++) {
-            //         bike = items[i];
-            //         this.testObject.push(bike)
-            //     }
-            // };
     },
     methods: {
         closeModal() {
@@ -34,9 +30,8 @@ export default {
         },
         addToCart() {
             this.isVisible = false;
-            // console.log(this.item)
-            // this.testObject.push(this.cart[this.id.id]);
-            // localStorage.setItem('testObject', JSON.stringify(this.testObject));
+            this.testObject.push(this.items);
+            localStorage.setItem('testObject', JSON.stringify(this.testObject));
         },
     },
 }
