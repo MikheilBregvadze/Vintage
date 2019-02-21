@@ -66,6 +66,7 @@
                                     </form>
                                 </div>
                             </li>
+                            @endguest
                             <li><a class="link" href="/home">OUTLAW</a></li>
                             <li><a class="link" href="/cruz">CRUZ</a></li>
                             {{-- <li><a class="link" href="javascript:void(0)">TRAKER</a></li> --}}
@@ -84,7 +85,7 @@
                         <li><a class="linkRight shopNow" href="javascript:void(0)">Shop Now</a></li>
                         <li><a class="linkRight zero" href="javascript:void(0)">0</a></li>
                     </ul>
-                    @endguest
+
                 </div>
             </div>
         </nav>

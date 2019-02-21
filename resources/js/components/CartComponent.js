@@ -49,12 +49,12 @@ export default {
     
     mounted() {
         var bike = '';
-            if(items) {
-                for(var i = 0; i < items.length; i++) {
-                    bike = items[i];
-                    this.items.push(bike);
-                    this.total += bike.price;
-                }
-            };
+        if(items) {
+            for(var i = 0; i < items.length; i++) {
+                bike = items[i];
+                this.items.push(bike);
+                this.total += bike.price;
+            }
+        };
     },
 }

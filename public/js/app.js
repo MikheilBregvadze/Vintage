@@ -52573,7 +52573,7 @@ var items = JSON.parse(retrievedObject);
   data: function data() {
     return {
       id: Number,
-      items: {},
+      bikeItem: '',
       isVisible: false,
       testObject: []
     };
@@ -52583,12 +52583,21 @@ var items = JSON.parse(retrievedObject);
 
     _Events_js__WEBPACK_IMPORTED_MODULE_0__["default"].$on('modal:open', function (obj) {
       _this.isVisible = true;
-      console.log(obj.item);
       var qty = 1;
       obj.item.qty = qty;
-      _this.items = obj.item;
-      console.log(_this.items);
+      _this.bikeItem = obj.item;
     }); // localStorage.clear();
+
+    var bike = '';
+
+    if (items) {
+      for (var i = 0; i < items.length; i++) {
+        bike = items[i];
+        this.testObject.push(bike);
+      }
+    }
+
+    ;
   },
   methods: {
     closeModal: function closeModal() {
@@ -52596,8 +52605,29 @@ var items = JSON.parse(retrievedObject);
     },
     addToCart: function addToCart() {
       this.isVisible = false;
-      this.testObject.push(this.items);
-      localStorage.setItem('testObject', JSON.stringify(this.testObject));
+      var products = this.testObject;
+      var res = this.bikeItem;
+
+      if (products.length == 0) {
+        products.push(res);
+      } else {
+        var pushItem = false;
+
+        for (var i = 0; i < products.length; i++) {
+          if (res.id != products[i].id) {
+            pushItem = true;
+          } else {
+            pushItem = false;
+            return products[i].qty++;
+          }
+        } //console.log(res)
+
+
+        pushItem ? products.push(res) : null;
+      } // this.testObject.push(this.bikeItem);
+
+
+      localStorage.setItem('cart', JSON.stringify(products));
     }
   }
 });
@@ -53455,8 +53485,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\vintages\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\vintages\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\vintage\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\vintage\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
