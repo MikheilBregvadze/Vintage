@@ -52490,7 +52490,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-var retrievedObject = localStorage.getItem('testObject');
+var retrievedObject = localStorage.getItem('cart');
 var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -52519,7 +52519,7 @@ var items = JSON.parse(retrievedObject);
         for (var i = 0; i < this.items.length; i++) {
           if (this.items[i].id === item.id) {
             window.localStorage.removeItem(this.items.splice(i, 1));
-            localStorage.setItem('testObject', JSON.stringify(this.items));
+            localStorage.setItem('cart', JSON.stringify(this.items));
             hideElement();
             break;
           }
@@ -52533,7 +52533,7 @@ var items = JSON.parse(retrievedObject);
       for (var i = 0; i < this.items.length; i++) {
         if (this.items[i].id === item.id) {
           window.localStorage.removeItem(this.items.splice(i, 1));
-          localStorage.setItem('testObject', JSON.stringify(this.items));
+          localStorage.setItem('cart', JSON.stringify(this.items));
           break;
         }
       }
@@ -52567,7 +52567,7 @@ var items = JSON.parse(retrievedObject);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events.js */ "./resources/js/Events.js");
 
-var retrievedObject = localStorage.getItem('testObject');
+var retrievedObject = localStorage.getItem('cart');
 var items = JSON.parse(retrievedObject);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -52575,7 +52575,8 @@ var items = JSON.parse(retrievedObject);
       id: Number,
       bikeItem: '',
       isVisible: false,
-      testObject: []
+      cart: [] // testObject: [],
+
     };
   },
   mounted: function mounted() {
@@ -52593,7 +52594,7 @@ var items = JSON.parse(retrievedObject);
     if (items) {
       for (var i = 0; i < items.length; i++) {
         bike = items[i];
-        this.testObject.push(bike);
+        this.cart.push(bike);
       }
     }
 
@@ -52605,27 +52606,29 @@ var items = JSON.parse(retrievedObject);
     },
     addToCart: function addToCart() {
       this.isVisible = false;
-      var products = this.testObject;
+      var products = this.cart;
       var res = this.bikeItem;
+      var pushItem = false;
+      var justInserted = false;
+      var arrayCount = products.length;
 
-      if (products.length == 0) {
+      if (!products.length) {
         products.push(res);
       } else {
-        var pushItem = false;
-
-        for (var i = 0; i < products.length; i++) {
-          if (res.id != products[i].id) {
-            pushItem = true;
+        for (var i = 0; i < arrayCount; i++) {
+          if (products[i].id == res.id && !justInserted) {
+            products[i].qty++;
+            break;
           } else {
-            pushItem = false;
-            return products[i].qty++;
+            pushItem = true;
           }
-        } //console.log(res)
 
-
-        pushItem ? products.push(res) : null;
-      } // this.testObject.push(this.bikeItem);
-
+          if (i == products.length - 1 && pushItem) {
+            justInserted = true;
+            products.push(res);
+          }
+        }
+      }
 
       localStorage.setItem('cart', JSON.stringify(products));
     }

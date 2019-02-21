@@ -1,6 +1,6 @@
 import Events from '../Events.js'
 
-var retrievedObject = localStorage.getItem('testObject');
+var retrievedObject = localStorage.getItem('cart');
 var items = JSON.parse(retrievedObject);
 
 export default {
@@ -9,7 +9,8 @@ export default {
             id: Number,
             bikeItem: '',
             isVisible: false,
-            testObject: [],
+            cart : [],
+            // testObject: [],
         }
     },
 
@@ -26,7 +27,7 @@ export default {
         if(items) {
             for(var i = 0; i < items.length; i++) {
                 bike = items[i];
-                this.testObject.push(bike)
+                this.cart.push(bike)
             }
         };
     },
@@ -36,24 +37,31 @@ export default {
         },
         addToCart() {
             this.isVisible = false;
-            let products = this.testObject
+            let products = this.cart
             let res = this.bikeItem
-            if(products.length == 0){
+            var pushItem = false;
+            var justInserted = false;
+            var arrayCount = products.length
+           
+            if(!products.length){
                 products.push(res)
             }else{
-                var pushItem = false;
-                for(var i = 0; i < products.length; i++){
-                    if(res.id != products[i].id){
-                        pushItem = true;
+                for(var i=0; i< arrayCount; i++)
+                {
+                    if(products[i].id == res.id && !justInserted)
+                    {
+                        products[i].qty++
+                        break;
                     }else{
-                        pushItem = false;
-                        return products[i].qty++
+                        pushItem = true;
+                    } 
+                    if(i == products.length-1 && pushItem){
+                        justInserted = true;
+                        products.push(res)
                     }
                 }
-                //console.log(res)
-                pushItem ? products.push(res) : null
+
             }
-            // this.testObject.push(this.bikeItem);
             localStorage.setItem('cart', JSON.stringify(products));
         },
     },

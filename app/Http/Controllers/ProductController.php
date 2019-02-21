@@ -79,7 +79,12 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+
+        return view('cafe.product', compact('product'));
+
+        // return $product;
+
     }
 
     /**

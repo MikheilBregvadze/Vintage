@@ -1,4 +1,4 @@
-var retrievedObject = localStorage.getItem('testObject');
+var retrievedObject = localStorage.getItem('cart');
 var items = JSON.parse(retrievedObject);
 export default {
     data() {
@@ -26,7 +26,7 @@ export default {
 				for(var i = 0; i < this.items.length; i++) {
 					if(this.items[i].id === item.id) {
                         window.localStorage.removeItem(this.items.splice(i, 1));
-                        localStorage.setItem('testObject', JSON.stringify(this.items));
+                        localStorage.setItem('cart', JSON.stringify(this.items));
                         hideElement()
 						break;
 					}
@@ -40,7 +40,7 @@ export default {
             for(var i = 0; i < this.items.length; i++) {
                 if(this.items[i].id === item.id) {
                     window.localStorage.removeItem(this.items.splice(i, 1));
-                    localStorage.setItem('testObject', JSON.stringify(this.items));
+                    localStorage.setItem('cart', JSON.stringify(this.items));
                     break;
                 }
             }
