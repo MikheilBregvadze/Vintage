@@ -1,0 +1,163 @@
+@import 'fonts';
+@import 'variable';
+@import '~bootstrap/dist/css/bootstrap.css';
+
+
+// @for $value from 1 through 12 { 
+// 	.flex-#{$value} {
+// 		 flex: $value;
+// 	}
+//  }
+
+//  @for $value from 1 through 100 { 
+// 	.fs-#{$value} {
+// 		 font-size: $value+px;
+// 		 line-height:  $value+($value/2)+px;
+// 	}
+//  }
+
+//  @for $value from 1 through 100 { 
+// 	.width-#{$value} {
+// 		 width: $value+vw;
+// 	}
+//  }
+
+//  @for $value from 1 through 10 { 
+// 	$value: $value / 10;
+// 	.opacity-#{$value} {
+// 		opacity: $value;
+// 	}
+//  }
+
+//  @for $value from 1 through 50 { 
+// 	.padd-#{$value} {
+// 		padding: $value+rem;
+// 	}
+//  }
+
+
+.btn-bg{
+	padding: 10px 30px;
+	font-size: 16px;
+	line-height: 18px;
+	outline: none;
+	cursor: pointer;
+	background-color: #6af0ff;
+	color: $mainColor;
+	border: 1px solid #6af0ff;
+	&:hover {
+	    background-color: transparent;
+	    color: #6af0ff;
+	}
+}
+.btn-border{
+	background: transparent;
+	color: $mainColor;
+	border: 1px solid $mainColor;
+	&:hover {
+	    background-color: $mainColor;
+	    color: #fff;
+	}
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+
+.color-blue{
+	color: $mainColor;
+}
+.color-white{
+	color: white;
+}
+.color-white-transparent{
+	color: rgba(white, .6);
+}
+.color-light{
+	color: #abaae6;
+}
+.color-skyblue{
+	color: $skyblue;
+}
+.bg-blue{
+	background: $mainColor;
+	color: #fff;
+}
+.bg-blue-tranparent{
+	background: rgba($mainColor, .8);
+	hr{background:rgba(#fff, .3)}
+}
+.bg-white-tranparent{
+	background: rgba(#fff, .6);
+}
+.bg-fixed{
+	background-attachment: fixed !important;
+}
+.overflow-hid{
+	overflow: hidden;
+}
+.scale{
+	transition: .3s;
+	&:hover{
+		transform: scale(1.1);
+	}
+}
+.b-right{
+	border-right: 1px solid rgba(#6af0ff, .1) !important;
+}
+.b-after{
+	position: relative;
+	&:after{
+		content: "";
+		position: absolute;
+		right: 0;
+		left: -1000%;
+		background: linear-gradient(to right, rgba($skyblue, 1) 80%, transparent);
+		height: 1px;
+		bottom: 0;
+	}
+}
+.b-before{
+	position: relative;
+	padding-left: 15px;
+	&:after{
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		background: linear-gradient(to bottom, rgba($skyblue, 1), transparent);
+		height: 100%;
+		width: 1px;
+		bottom: 0;
+	}
+}
+.circle{
+	border-radius: 50%;
+}
+.italic{
+	font-style: italic;
+}
+.up{
+	text-transform: uppercase;
+}
+.ff-thin{
+	font-family: $robotoThin;
+}
+.ff-bold{
+	font-family: $robotoBold;
+}
+.ff-regular{
+	font-family: $robotoRegular;
+}
+.ff-light{
+	font-family: $robotoLight;
+}
+
+@media screen and (max-width: 768px){
+	.scale{
+		&:hover{
+			transform: none;
+		}
+	}
+}

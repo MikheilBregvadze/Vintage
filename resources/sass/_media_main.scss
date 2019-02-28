@@ -1,0 +1,129 @@
+@media screen and (max-width: 1480px){
+	main > div{
+		padding: 0 25px;
+	}
+	header{
+		padding: 5px 25px 6px;
+		margin-bottom: 25px;
+	}
+	.card{
+		padding: 15px;
+		.card-header{
+		
+		}
+	}
+}
+
+@media screen and (max-width: 991px){
+	main{
+		width: 100%;
+		> div{padding: 0 30px;}
+	}
+	header{
+		padding: 5px 30px 6px;
+		.dropdown{
+			margin-right: 20px;
+		}
+		.icons form.logout{
+			margin-left: 10px;
+		}
+	}
+	.sidebar{
+		position: absolute;
+		left: -300px;
+		z-index: 1000;
+		&.show{
+			left: 0px;
+		}
+	}
+	aside{
+		.close{
+			display: block;
+		}
+		.show-sidebar{
+				display: block;
+		}
+	}
+}
+
+@media screen and (max-width: 768px){
+	.btn{
+		padding: 10px 15px;
+	}
+	.count-up {
+	    .countable{
+	        font-size: 24px;
+	        line-height: 28px;
+	    }
+	}
+	.show-more{
+		text-align: center;
+	}
+	.dashboard{
+		 .balance, .exchange{
+		 	 .card{
+		 	 	min-height: auto;
+		 	 }
+		 }
+	}
+	.nav-link{
+		font-size: 18px!important;
+	}
+}
+@media screen and (max-width: 580px){
+	main{
+		> div{padding: 0}
+	}
+	h2{
+		padding: 15px 0;
+		font-size: 22px;
+		line-height: 26px;
+	}
+	.btn{
+		padding: 5px 10px;
+		font-size: 12px;
+	}
+	.card{
+		padding: 0;
+		.card-header{
+			.secondary-title{
+				font-size: 14px;
+				line-height: 24px;
+			}
+			.amount{
+				font-size: 14px;
+				line-height: 24px;
+				span{
+					font-size: 12px;
+				}
+			}
+		}
+		.card-body{
+			h3, .rate{
+				font-size: 12px;
+			}
+		}
+	}
+	header{
+		padding: 5px 0 6px;
+		margin-bottom: 15px;
+		.icons{
+			margin-right: 15px;
+			width: 45px;
+		}
+		.user-name{
+			font-size: 16px;
+			line-height: 18px;
+		}
+	}
+	.w-image{
+		width: 55px;
+		margin-right: 5px;
+		img{
+			width: 100%;
+		}
+	}
+	.w-coin{
+		width: calc(100% - 60px);
+	}
+}

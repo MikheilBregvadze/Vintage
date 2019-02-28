@@ -1,9 +1,10 @@
 
 require('./bootstrap');
 
-import Vue from 'vue';
+import Vue from 'vue'
 import router from './routes';
 import VueRouter from 'vue-router';
+import HomePage from './components/HomePage.js'
 import VideoComponent from './components/VideoComponent.js'
 import BikeComponent from './components/BikeComponent.js'
 import ModalConfirmation from './components/ModalConfirmation.js'
@@ -32,6 +33,7 @@ const app = new Vue({
     el: '#app',
     router,
     components:{
+        HomePage,
         VideoComponent,
         BikeComponent,
         ModalConfirmation,
