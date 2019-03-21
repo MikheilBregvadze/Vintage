@@ -22,7 +22,7 @@
                         </div>
                     </a>
                 </li>
-                <li><a class="link" href="/home">OUTLAW</a></li>
+                <li><a class="link" href="/dashboard">OUTLAW</a></li>
                 <li><a class="link" href="/cruz">CRUZ</a></li>
                 {{-- <li><a class="link" href="javascript:void(0)">TRAKER</a></li> --}}
                 <li><a class="link" href="/scrambler">SCRAMBLER</a></li>

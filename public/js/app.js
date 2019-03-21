@@ -52547,17 +52547,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
-/* harmony import */ var _components_HomePage_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/HomePage.js */ "./resources/js/components/HomePage.js");
-/* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
-/* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
-/* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
-/* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
-/* harmony import */ var _shop_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shop/AccessoriesComponent.js */ "./resources/js/shop/AccessoriesComponent.js");
-/* harmony import */ var _shop_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shop/ShopBikeComponent.js */ "./resources/js/shop/ShopBikeComponent.js");
-/* harmony import */ var _shop_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shop/ApporelComponent.js */ "./resources/js/shop/ApporelComponent.js");
-/* harmony import */ var _shop_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./shop/ShopAddedComponent.js */ "./resources/js/shop/ShopAddedComponent.js");
+/* harmony import */ var _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/VideoComponent.js */ "./resources/js/components/VideoComponent.js");
+/* harmony import */ var _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/BikeComponent.js */ "./resources/js/components/BikeComponent.js");
+/* harmony import */ var _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ModalConfirmation.js */ "./resources/js/components/ModalConfirmation.js");
+/* harmony import */ var _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/CartComponent.js */ "./resources/js/components/CartComponent.js");
+/* harmony import */ var _shop_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./shop/AccessoriesComponent.js */ "./resources/js/shop/AccessoriesComponent.js");
+/* harmony import */ var _shop_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./shop/ShopBikeComponent.js */ "./resources/js/shop/ShopBikeComponent.js");
+/* harmony import */ var _shop_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./shop/ApporelComponent.js */ "./resources/js/shop/ApporelComponent.js");
+/* harmony import */ var _shop_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./shop/ShopAddedComponent.js */ "./resources/js/shop/ShopAddedComponent.js");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
-
 
 
 
@@ -52586,15 +52584,14 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"],
   components: {
-    HomePage: _components_HomePage_js__WEBPACK_IMPORTED_MODULE_3__["default"],
-    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
-    BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_5__["default"],
-    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_6__["default"],
-    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"],
-    AccessoriesComponent: _shop_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"],
-    ShopBikeComponent: _shop_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_9__["default"],
-    ApporelComponent: _shop_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_10__["default"],
-    ShopAddedComponent: _shop_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_11__["default"]
+    VideoComponent: _components_VideoComponent_js__WEBPACK_IMPORTED_MODULE_3__["default"],
+    BikeComponent: _components_BikeComponent_js__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ModalConfirmation: _components_ModalConfirmation_js__WEBPACK_IMPORTED_MODULE_5__["default"],
+    CartComponent: _components_CartComponent_js__WEBPACK_IMPORTED_MODULE_6__["default"],
+    AccessoriesComponent: _shop_AccessoriesComponent_js__WEBPACK_IMPORTED_MODULE_7__["default"],
+    ShopBikeComponent: _shop_ShopBikeComponent_js__WEBPACK_IMPORTED_MODULE_8__["default"],
+    ApporelComponent: _shop_ApporelComponent_js__WEBPACK_IMPORTED_MODULE_9__["default"],
+    ShopAddedComponent: _shop_ShopAddedComponent_js__WEBPACK_IMPORTED_MODULE_10__["default"]
   }
 });
 
@@ -52706,7 +52703,7 @@ var items = JSON.parse(retrievedObject);
       mounted: true,
       bikeId: '',
       items: [],
-      itemsLength: items.length,
+      itemsLength: 0,
       total: 0,
       imgUrl: ''
     };
@@ -52747,100 +52744,24 @@ var items = JSON.parse(retrievedObject);
     }
   },
   mounted: function mounted() {
-    console.log(this.$refs.allPrice.innerText);
     var bike = '';
+    var itemLength = this.itemsLength;
+    var total = this.total;
 
     if (items) {
       for (var i = 0; i < items.length; i++) {
+        itemLength += items[i].qty;
+        total += items[i].qty * items[i].price;
         bike = items[i];
         this.items.push(bike);
         this.total += bike.price;
       }
+
+      this.itemsLength = itemLength;
+      this.total = total;
     }
 
     ;
-  }
-});
-
-/***/ }),
-
-/***/ "./resources/js/components/HomePage.js":
-/*!*********************************************!*\
-  !*** ./resources/js/components/HomePage.js ***!
-  \*********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      top: scrollY * .6,
-      maxHeight: 0,
-      resizeHeader: false,
-      bgSize: 1350,
-      headerBg: false
-    };
-  },
-  methods: {
-    handleScroll: function handleScroll(event) {
-      this.top = scrollY * .6;
-      this.headerSm();
-    },
-    menuToggle: function menuToggle() {
-      if (this.maxHeight == 0) {
-        this.maxHeight = 300;
-        this.headerBg = true;
-        document.querySelector('.menu-toggle').className += ' open';
-      } else {
-        this.maxHeight = 0;
-        this.headerBg = false;
-        document.querySelector('.menu-toggle.open').className = 'menu-toggle';
-      }
-
-      document.querySelector('.responsive-menu').style.maxHeight = this.maxHeight + 'px';
-    },
-    handleResize: function handleResize(event) {
-      this.responsiveMenu(); // if(window.innerWidth > 1700){
-      //   this.bgSize = 90
-      // }else if(window.innerWidth > 1500){
-      //   this.bgSize = 105
-      // }else if(window.innerWidth > 1200){
-      //   this.bgSize = 135
-      // }else if(window.innerWidth > 992){
-      //   this.bgSize = 195
-      // }else{
-      //   this.bgSize = 500
-      // }
-    },
-    responsiveMenu: function responsiveMenu() {
-      var maxHeight = document.querySelector('.responsive-menu').style.maxHeight;
-
-      if (window.innerWidth < 991) {
-        document.querySelector('.responsive-menu').style = "max-height: ".concat(this.maxHeight, "px; overflow: hidden");
-      } else {
-        document.querySelector('.responsive-menu').style = "max-height: unset; overflow: inherit";
-      }
-    },
-    headerSm: function headerSm() {
-      if (scrollY > 240 || window.location.pathname != '/' || this.maxHeight != 0) {
-        this.resizeHeader = true;
-      } else {
-        this.resizeHeader = false;
-      }
-    }
-  },
-  created: function created() {
-    window.addEventListener('scroll', this.handleScroll);
-    window.addEventListener('resize', this.handleResize);
-    this.handleResize();
-  },
-  mounted: function mounted() {
-    this.responsiveMenu();
-  },
-  destroyed: function destroyed() {
-    window.removeEventListener('scroll', this.handleScroll);
   }
 });
 

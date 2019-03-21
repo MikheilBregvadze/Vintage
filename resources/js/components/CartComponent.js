@@ -7,7 +7,7 @@ export default {
             mounted: true,
             bikeId: '',
             items: [],
-            itemsLength: items.length,
+            itemsLength: 0,
             total: 0,
             imgUrl: '',
         }
@@ -48,14 +48,19 @@ export default {
     },
     
     mounted() {
-        console.log(this.$refs.allPrice.innerText)
-        var bike = '';
+        let bike = '';
+        let itemLength = this.itemsLength;
+        let total = this.total;
         if(items) {
             for(var i = 0; i < items.length; i++) {
+                itemLength += items[i].qty
+                total += items[i].qty * items[i].price
                 bike = items[i];
                 this.items.push(bike);
                 this.total += bike.price;
             }
+            this.itemsLength = itemLength;
+            this.total = total;
         };
     },
 } 
