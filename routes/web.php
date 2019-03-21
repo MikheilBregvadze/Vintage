@@ -12,14 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('');
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/cruz', 'CruzController@index')->name('cruz');
 Route::get('/scrambler', 'ScramblerController@index')->name('cruz');
 Route::get('/cafe', 'CafeController@index')->name('cruz');
 Route::get('/cafe/shop', 'ShopController@index')->name('cruz');
 Route::resource('/home', 'ProductController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

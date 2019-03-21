@@ -55,9 +55,9 @@
                                     <img src="http://127.0.0.1:8001/img/product/{{ $item->id .'/'. $item->file }}" alt="picture">
                                 </div>
                                 <div class="bike-box_desc">
-                        <a href="{{route('home.show', $item->id)}}"><h4>{{ $item->title }}</h4></a>
-
-                                    
+                                    <a href="{{route('home.show', $item->id)}}">
+                                        <h4>{{ $item->title }}</h4>
+                                    </a>
                                     <p>{{ $item->description }}</p>
                                 </div>
                                 <div class="hidden d-flex justify-content-around align-content-center">

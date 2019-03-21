@@ -20,7 +20,7 @@ export default {
         },
         dec(item) {
             item.qty--;
-            this.itemsLength--
+            this.itemsLength--;
 			this.total -= item.price;
 			if(item.qty <= 0) {
 				for(var i = 0; i < this.items.length; i++) {
@@ -48,6 +48,7 @@ export default {
     },
     
     mounted() {
+        console.log(this.$refs.allPrice.innerText)
         var bike = '';
         if(items) {
             for(var i = 0; i < items.length; i++) {
@@ -57,4 +58,4 @@ export default {
             }
         };
     },
-}
+} 
