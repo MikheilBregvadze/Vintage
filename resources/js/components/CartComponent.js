@@ -7,7 +7,7 @@ export default {
             mounted: true,
             bikeId: '',
             items: [],
-            itemsLength: items.length,
+            itemsLength: 0,
             total: 0,
             imgUrl: '',
         }
@@ -20,7 +20,7 @@ export default {
         },
         dec(item) {
             item.qty--;
-            this.itemsLength--
+            this.itemsLength--;
 			this.total -= item.price;
 			if(item.qty <= 0) {
 				for(var i = 0; i < this.items.length; i++) {
@@ -48,13 +48,19 @@ export default {
     },
     
     mounted() {
-        var bike = '';
+        let bike = '';
+        let itemLength = this.itemsLength;
+        let total = this.total;
         if(items) {
             for(var i = 0; i < items.length; i++) {
+                itemLength += items[i].qty
+                total += items[i].qty * items[i].price
                 bike = items[i];
                 this.items.push(bike);
                 this.total += bike.price;
             }
+            this.itemsLength = itemLength;
+            this.total = total;
         };
     },
-}
+} 

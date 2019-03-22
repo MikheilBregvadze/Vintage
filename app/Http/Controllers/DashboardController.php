@@ -7,8 +7,12 @@ use App\Product;
 use Image; // $composer require intervention/image
 use File;
 
-class ProductController extends Controller
+class DashboardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +21,7 @@ class ProductController extends Controller
     public function index()
     {
         $product = Product::All();
-        return view('home.index', compact('product'));
+        return view('/dashboard', compact('product'));
     }
 
     /**
