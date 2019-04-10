@@ -52731,8 +52731,9 @@ var items = JSON.parse(retrievedObject);
       }
     },
     deleteItem: function deleteItem(item) {
-      item.qty--;
-      this.itemsLength--;
+      this.total -= item.qty * item.price;
+      this.itemsLength -= item.qty;
+      console.log(this.itemsLength);
 
       for (var i = 0; i < this.items.length; i++) {
         if (this.items[i].id === item.id) {
