@@ -2,11 +2,11 @@ import VueRouter from 'vue-router';
 
 let routes = [
     {
-        path: '/',
+        path: '/dashboard/',
         component: require('./views/Gallery').default,
     },
     {
-        path: '/build-yours',
+        path: '/dashboard/build-yours',
         component: require('./views/BuildYours').default,// view-> about.js
     },
 ];
