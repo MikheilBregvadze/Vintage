@@ -84,7 +84,7 @@
                                 </div>
                             </div>
                             <div v-else class="text-center mt-5 mb-5">
-                                <a href="/home/#testino">Add some Item?</a>
+                                <a href="/dashboard/#testino">Add some Item?</a>
                             </div>
                         </div>
                     </div>

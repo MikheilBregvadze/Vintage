@@ -52731,8 +52731,9 @@ var items = JSON.parse(retrievedObject);
       }
     },
     deleteItem: function deleteItem(item) {
-      item.qty--;
-      this.itemsLength--;
+      this.total -= item.qty * item.price;
+      this.itemsLength -= item.qty;
+      console.log(this.itemsLength);
 
       for (var i = 0; i < this.items.length; i++) {
         if (this.items[i].id === item.id) {
@@ -53370,10 +53371,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue_router__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-router */ "./node_modules/vue-router/dist/vue-router.esm.js");
 
 var routes = [{
-  path: '/',
+  path: '/dashboard/',
   component: __webpack_require__(/*! ./views/Gallery */ "./resources/js/views/Gallery.vue").default
 }, {
-  path: '/build-yours',
+  path: '/dashboard/build-yours',
   component: __webpack_require__(/*! ./views/BuildYours */ "./resources/js/views/BuildYours.vue").default // view-> about.js
 
 }];
