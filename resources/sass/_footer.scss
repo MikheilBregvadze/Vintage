@@ -23,6 +23,9 @@ ul{
 }
 .f-logo {
   width: 70px !important;
+  img {
+    filter: invert(1) brightness(100);
+  }
 }
 .footer-right_border {
   width: 290px;

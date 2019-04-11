@@ -21,7 +21,7 @@ img {
   }
   
 .link{
-      color: $main;
+    color: $black;
     margin-left: 15px;
   }
 .dropdown-menu-right {
@@ -29,6 +29,9 @@ img {
 }
 .navbar-expand-md .navbar-nav .nav-link {
     padding: 0 !important;
+}
+.navbarHeader {
+    padding-top: 60px !important;
 }
 .link:hover {
     text-decoration: none;
@@ -123,7 +126,8 @@ img {
 .logo .logoImg {
     background: url("/img/logo.png") no-repeat center/cover;
     width: 105px;
-    height: 105px; }
+    height: 105px; 
+}
 .logo img {
     width: 100%; }
     

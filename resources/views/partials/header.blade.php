@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light navbar-laravel mt-5 mb-5">
+<nav class="navbar navbarHeader navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
             {{-- {{ config('app.name', 'Vintage') }} --}}
@@ -9,7 +9,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto align-items-center">
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="navigation-circle nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                         <div class="top">
@@ -22,9 +22,11 @@
                         </div>
                     </a>
                 </li>
+                @guest
+                @else
                 <li><a class="link" href="/dashboard">OUTLAW</a></li>
+                @endguest
                 <li><a class="link" href="/cruz">CRUZ</a></li>
-                {{-- <li><a class="link" href="javascript:void(0)">TRAKER</a></li> --}}
                 <li><a class="link" href="/scrambler">SCRAMBLER</a></li>
                 @guest
                 @else
@@ -33,18 +35,19 @@
             </ul>
             <div class="logo">
                 <a href=""><div class="logoImg"></div></a>
-                <!-- <a href=""><img src="img/logo.png" alt="logo"></a> -->
             </div>
-            <!-- Right Side Of Navbar -->
             
-
-            <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
-                <!-- Authentication Links -->
                 @guest
                 
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        <login-button :text="'Login'"/>
+                        @if(!auth::user())
+                            <login-button :text="'Login'"/>
+                            @else
+                                <a class="login-button" href="{{route('dashboard')}}">My profile</a>
+                            @endif 
+                        <a class="nav-link" href="">{{ __('Login') }}</a>
                     </li>
                     @if (Route::has('register'))
                         <li class="nav-item">

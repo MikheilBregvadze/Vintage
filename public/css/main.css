@@ -20460,6 +20460,11 @@ main {
   min-height: 90vh;
 }
 
+.navbar {
+  position: relative;
+  z-index: 20;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -20485,7 +20490,7 @@ header nav ul li {
 
 header nav ul li a {
   display: block;
-  color: #fff;
+  color: #fff !important;
   font-size: 16px;
   line-height: 20px;
   padding: 13px 20px;
@@ -20672,144 +20677,6 @@ ul.block-list li {
   display: block;
 }
 
-.login,
-.register,
-.reset-password,
-.forget-password {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  max-width: 450px;
-  padding: 50px;
-  background: #fff;
-  font-family: "Roboto-Regular";
-  -webkit-transform: translateX(-50%) translateY(-50%);
-          transform: translateX(-50%) translateY(-50%);
-}
-
-.login h2,
-.register h2,
-.reset-password h2,
-.forget-password h2 {
-  margin-bottom: 30px;
-}
-
-.login .form-group,
-.register .form-group,
-.reset-password .form-group,
-.forget-password .form-group {
-  position: relative;
-  margin-bottom: 30px;
-}
-
-.login .form-group input,
-.register .form-group input,
-.reset-password .form-group input,
-.forget-password .form-group input {
-  height: 40px;
-  border: none;
-  border-radius: 0;
-  border-bottom: 1px solid #dee0ed;
-  padding: 0;
-}
-
-.login .form-group input:focus,
-.register .form-group input:focus,
-.reset-password .form-group input:focus,
-.forget-password .form-group input:focus {
-  box-shadow: none;
-  border-bottom: 1px solid #131149;
-}
-
-.login button,
-.register button,
-.reset-password button,
-.forget-password button {
-  width: 100%;
-  margin-top: 30px;
-  background: #131149;
-  color: #fff;
-  height: 50px;
-  border: 1px solid #131149;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.login button:focus,
-.login button:hover,
-.login button:focus-within,
-.login button:active,
-.register button:focus,
-.register button:hover,
-.register button:focus-within,
-.register button:active,
-.reset-password button:focus,
-.reset-password button:hover,
-.reset-password button:focus-within,
-.reset-password button:active,
-.forget-password button:focus,
-.forget-password button:hover,
-.forget-password button:focus-within,
-.forget-password button:active {
-  box-shadow: none;
-  outline: none;
-  background: none;
-  color: #131149;
-}
-
-.login .text-danger,
-.register .text-danger,
-.reset-password .text-danger,
-.forget-password .text-danger {
-  font-family: "Roboto-Thin";
-}
-
-.login .custom-control-label:before,
-.register .custom-control-label:before,
-.reset-password .custom-control-label:before,
-.forget-password .custom-control-label:before {
-  color: #fff;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  top: 0px;
-}
-
-.login .custom-control-label:after,
-.register .custom-control-label:after,
-.reset-password .custom-control-label:after,
-.forget-password .custom-control-label:after {
-  top: 3px;
-  left: -22px;
-}
-
-.login input:checked ~ .custom-control-label:before,
-.register input:checked ~ .custom-control-label:before,
-.reset-password input:checked ~ .custom-control-label:before,
-.forget-password input:checked ~ .custom-control-label:before {
-  background-color: #131149 !important;
-}
-
-.login .close,
-.register .close,
-.reset-password .close,
-.forget-password .close {
-  color: #c0c1c8;
-}
-
-.login .close:hover,
-.register .close:hover,
-.reset-password .close:hover,
-.forget-password .close:hover {
-  color: #595b6a;
-}
-
-.popup-link {
-  color: #131149;
-  font-size: 16px;
-  margin-top: 30px;
-}
-
 button.sent span {
   position: relative;
 }
@@ -20957,11 +20824,115 @@ button.sent span:after {
 }
 
 footer {
+  position: relative;
+  z-index: 20;
   color: #131149;
 }
 
 footer .footer-bot {
   background: #f1f5fb;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: #222;
+  background-image: url("https://drive.google.com/uc?export=view&id=0BzFF7FmbJUo5X0NEUXFVd0NBcWc");
+  background-size: cover;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+}
+
+body:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  -webkit-animation: thunder-bg 6s infinite;
+          animation: thunder-bg 6s infinite;
+}
+
+canvas {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+#canvas3 {
+  z-index: 5;
+}
+
+#canvas2 {
+  z-index: 10;
+}
+
+#canvas1 {
+  z-index: 15;
+}
+
+@-webkit-keyframes thunder-bg {
+  0% {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+
+  9% {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+
+  10% {
+    background-color: rgba(59, 59, 59, 0.3);
+  }
+
+  10.5% {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+
+  80% {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+
+  82% {
+    background-color: rgba(59, 59, 59, 0.3);
+  }
+
+  83% {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
+
+  83.5% {
+    background-color: rgba(59, 59, 59, 0.3);
+  }
+
+  100% {
+    background-color: rgba(34, 34, 34, 0.9);
+  }
 }
 
 @media screen and (max-width: 991px) {

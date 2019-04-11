@@ -86,38 +86,38 @@
   }
 }
 
-.form-control::-ms-expand {
-  background-color: transparent;
-  border: 0;
-}
+// .form-control::-ms-expand {
+//   background-color: transparent;
+//   border: 0;
+// }
 
-.form-control:focus {
-  color: #495057;
-  background-color: #fff;
-  border-color: #80bdff;
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-}
+// .form-control:focus {
+//   color: #495057;
+//   background-color: #fff;
+//   border-color: #80bdff;
+//   outline: 0;
+//   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+// }
 
-.form-control::placeholder {
-  opacity: 1;
-}
+// .form-control::placeholder {
+//   opacity: 1;
+// }
 
-.form-control:disabled, .form-control[readonly] {
-  background-color: #e9ecef;
-  opacity: 1;
-}
+// .form-control:disabled, .form-control[readonly] {
+//   background-color: #e9ecef;
+//   opacity: 1;
+// }
 
-select.form-control:focus::-ms-value {
-  color: #495057;
-  background-color: #fff;
-}
+// select.form-control:focus::-ms-value {
+//   color: #495057;
+//   background-color: #fff;
+// }
 
-.form-control-file,
-.form-control-range {
-  display: block;
-  width: 100%;
-}
+// .form-control-file,
+// .form-control-range {
+//   display: block;
+//   width: 100%;
+// }
 
 
 .select-component {
@@ -172,24 +172,24 @@ select.form-control:focus::-ms-value {
 .filters {
   width: 100%;
 }
-.form-control {
-  height: 60px !important;
-  width: 100% !important;
-  display: block;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #f5f5f5 !important;
-  background-clip: padding-box;
-  border: 1px solid $grey;
-  border-top-left-radius: 0 !important;
-  border-top-right-radius: 0 !important;
-  border-top: none !important;
-  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
-}
+// .form-control {
+//   height: 60px !important;
+//   width: 100% !important;
+//   display: block;
+//   font-size: 1rem;
+//   font-weight: 400;
+//   line-height: 1.5;
+//   color: #495057;
+//   background-color: #f5f5f5 !important;
+//   background-clip: padding-box;
+//   border: 1px solid $grey;
+//   border-top-left-radius: 0 !important;
+//   border-top-right-radius: 0 !important;
+//   border-top: none !important;
+//   transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+//   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+//   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+// }
 .paddingLR {
   padding: 0 1px;
 }

@@ -25,7 +25,6 @@
 						<router-link tag="span" to="/dashboard/build-yours" exact>
 							<a class="sectionTwo">build Yours</a>
 						</router-link>
-						
 					</div>
 				</div>
 				

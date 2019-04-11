@@ -1,0 +1,137 @@
+body {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: #fff9f9;
+}
+.navbar-nav {
+    .nav-item {
+        padding-right: 15px !important;
+    }
+}
+
+.nav-link {
+    color: #b3b2b2 !important;
+}
+li .nav-item {
+    padding-right: 15px !important;
+}
+
+
+.scale-enter-active, .scale-leave-active {
+	transition: all .3s;
+  }
+.scale-enter, .scale-leave-to{
+	opacity: 0;
+	transform: scale(0.9)
+}
+
+ .fade-enter-active, .fade-leave-active {
+ 	transition: all .2s;
+   }
+.fade-enter, .fade-leave-to{
+	opacity: 0;
+	transform: translateY(-15%);
+}
+.popUp{
+	position: fixed;
+	display: none;
+	left: -10%;
+	top: -10%;
+	right: -10%;
+	bottom: -10%;
+	background: rgba(255, 255, 255, 0);
+	z-index: 25;
+	&.show{
+		display: block;
+	}
+}
+.login, .register, .reset-password, .forget-password{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	max-width: 450px;
+	background: rgba(255, 255, 255, .2);
+	transform: translateX(-50%) translateY(-50%);
+	h2{
+		margin-bottom: 30px;
+	}
+	.form-group{
+		position: relative;
+		input{
+			height: 40px;
+			border: none;
+			border-radius: 0;
+			border-bottom: 1px solid #dee0ed;
+			padding: 0;
+			&:focus{
+				box-shadow: none;
+			}
+		}
+		margin-bottom: 30px;
+	}
+	button{
+		width: 100%;
+		margin-top: 30px;
+		background: red;
+		color: #fff;
+		height: 50px;
+		border: 1px solid red;
+		cursor: pointer;
+		transition: .5s;
+		&:focus, &:hover, &:focus-within, &:active{
+			box-shadow: none;
+			outline: none;
+			background: none;
+			color: red;
+		}
+	}
+	.custom-control-label{
+		&:before{
+			color: #fff;
+		    width: 20px;
+		    height: 20px;
+		    border-radius: 50%;
+		    top: 0px;
+		}
+		&:after{
+			top: 3px;
+			left: -22px;
+		}
+	}
+	input:checked ~ .custom-control-label:before{
+		background-color: red !important;
+	}
+}
+.popup-link{
+	color: red;
+	font-size: 16px;
+	margin-top: 30px;
+}
+.loginHeader {
+    padding: 45px 0;
+    text-align: center;
+    color: #fff9f9;
+    font-size: 20px;
+}
+.loginInputs {
+    padding: 0 20px;
+}
+.logoImg {
+    filter: invert(1) brightness(100);
+}
+.footer-container {
+    padding-top: 560px;
+}
+.link {
+    color: #b3b2b2 !important;
+}
+.inputStyle {
+    padding-left: 5px !important;
+    height: 50px !important;
+}
+// input:-webkit-autofill {
+//     box-shadow: inset 0 0 0 1000px transparent!important;
+//     transition: background-color 5000s ease-in-out 0s!important;
+//     -webkit-text-fill-color: hsla(0,0%,100%,.75)!important;
+// }

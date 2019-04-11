@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/dashboard', function () {
-    return view('');
-});
+
+Route::get('/', 'HomeController@index');
+Route::get('/login', 'HomeController@index')->name('login');
 
 Auth::routes();
 
@@ -23,5 +23,7 @@ Route::get('/cafe', 'CafeController@index')->name('cruz');
 Route::get('/cafe/shop', 'ShopController@index')->name('cruz');
 
 Auth::routes();
+
+Route::get('/{any}', 'DashboardController@index')->where('any', '.*');
 
 Route::get('/dashboard', 'DashboardController@index');
