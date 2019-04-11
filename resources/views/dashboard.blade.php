@@ -19,10 +19,10 @@
 					<h1>Emory Outlaw Tracker</h1>
 					<p>A collaboration with Emory Motorsports</p>
 					<div class="gallery-section">
-						<router-link tag="span" to="/" exact>
+						<router-link tag="span" to="/dashboard" exact>
 								<a class="sectionOne">Explore</a>
 						</router-link>
-						<router-link tag="span" to="/build-yours" exact>
+						<router-link tag="span" to="/dashboard/build-yours" exact>
 							<a class="sectionTwo">build Yours</a>
 						</router-link>
 						
