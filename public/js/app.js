@@ -61837,6 +61837,7 @@ var items = JSON.parse(retrievedObject);
       var qty = 1;
       obj.item.qty = qty;
       _this.bikeItem = obj.item;
+      document.body.className = 'o-hidden';
     }); // localStorage.clear();
 
     var bike = '';
@@ -61853,6 +61854,7 @@ var items = JSON.parse(retrievedObject);
   methods: {
     closeModal: function closeModal() {
       this.isVisible = false;
+      document.body.className = 'o-visible';
     },
     addToCart: function addToCart() {
       this.isVisible = false;

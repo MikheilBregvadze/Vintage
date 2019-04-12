@@ -20,6 +20,7 @@ export default {
             var qty = 1
             obj.item.qty = qty
             this.bikeItem = obj.item
+            document.body.className = 'o-hidden';
         });
         
         // localStorage.clear();
@@ -34,6 +35,7 @@ export default {
     methods: {
         closeModal() {
             this.isVisible = false;
+            document.body.className = 'o-visible';
         },
         addToCart() {
             this.isVisible = false;

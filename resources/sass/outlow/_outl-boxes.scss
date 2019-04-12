@@ -1,3 +1,6 @@
+.o-hidden {
+    overflow: hidden;
+}
 .title {
   width: 100%;
   text-align: center;
@@ -21,15 +24,6 @@
   color: #000;
   text-decoration: none; 
 }
-// .modal-confirm{
-//   position: fixed;
-//   left: 0;
-//   right: 0;
-//   top: 0;
-//   bottom: 0;
-//   background: rgba(0,0,0,.5);
-//   z-index: 1;
-// }
 .tableImg  {
   max-width: 33.333333% !important; 
 }

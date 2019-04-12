@@ -1080,6 +1080,10 @@ a:hover {
   background-color: #b6e1de;
 }
 
+.o-hidden {
+  overflow: hidden;
+}
+
 .title {
   width: 100%;
   text-align: center;
