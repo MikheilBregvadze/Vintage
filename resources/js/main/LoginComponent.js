@@ -1,6 +1,5 @@
-
-import Events from '../Events'
 import axios from 'axios'
+import Events from '../Events'
 export default {
     data() {
         return {
@@ -19,17 +18,12 @@ export default {
               .post('/login', this.form)
               .then(({ data }) => {
                 window.location.href = this.test;
-                // this.errors = {};
                 console.log(window.location.href);
               })
               .catch(errors => {
-                console.log(errors);
                 this.errors = errors.response.data.errors;
               });
           },
-          add() {
-            console.log(this.form);
-          }
     },
     mounted() {
         Events.$on('login:open', () => {

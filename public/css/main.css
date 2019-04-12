@@ -20530,6 +20530,10 @@ h2 {
   padding: 0px 0px 0px 10px;
 }
 
+li .nav-item {
+  padding-right: 15px !important;
+}
+
 .menu-toggle {
   display: none;
   position: relative;
@@ -20935,106 +20939,59 @@ canvas {
   }
 }
 
-@media screen and (max-width: 991px) {
-  ul.mainmenu {
-    padding-bottom: 10px;
+@media only screen and (max-width: 1100px) {
+  .gallery-box .fzbig,
+  h3 {
+    font-size: 25pt !important;
   }
 
-  ul.mainmenu li a {
-    padding: 10px 0;
+  .fzsmall {
+    padding-top: 0 !important;
   }
 
-  .menu-toggle {
-    display: block;
-  }
-
-  .navBar ul {
-    flex-wrap: wrap;
-    padding: 0;
-  }
-
-  .navBar ul li {
-    width: 100%;
-    flex: auto;
-  }
-
-  .navBar .btn-main,
-  .navBar a.current {
-    margin: auto;
-  }
-
-  .three-card .card {
-    padding: 20px;
+  .gallery-box_title {
+    padding: 30px 40px !important;
   }
 }
 
-@media screen and (max-width: 768px) {
-  h2 {
-    font-size: 20px;
-    line-height: 24px;
+@media only screen and (max-width: 930px) {
+  .gallery-box_title {
+    padding: 15px 30px !important;
   }
 
-  .features .item {
-    width: 100%;
+  .inside-z {
+    top: 44% !important;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .inside-z {
+    right: -110px !important;
   }
 
-  .header-block h1 {
-    font-size: 20px;
-    line-height: 24px;
+  .gallery-box h3 {
+    margin-bottom: 0;
+    font-size: 20pt !important;
   }
 
-  .header-block .app-description p {
-    font-size: 12px;
-    line-height: 14px;
-    padding: 0;
+  .gallery-box .fzbig {
+    font-size: 20pt !important;
   }
 
-  .register,
-  .login {
-    max-width: 80%;
+  .gallery-box p {
+    padding-top: 0 !important;
   }
 
-  .register-button,
-  .login-button {
-    padding: 15px 30px;
+  .gallery-box .fzsmall {
+    font-size: 14pt;
   }
 
-  .coins .coin {
-    font-size: 12px;
-    line-height: 16px;
+  .sliderButton {
+    margin-left: 55px !important;
   }
 
-  #section4 {
-    padding-top: 10px;
-  }
-
-  #section3 {
-    padding: 0;
-  }
-
-  .features {
-    padding: 10px 0;
-  }
-
-  .description {
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  footer {
-    padding: 35px 0 50px;
-  }
-
-  footer ul.menu {
-    margin-bottom: 30px;
-  }
-
-  footer ul.menu li a {
-    font-size: 14px;
-  }
-
-  footer ul.menu:nth-child(2) {
-    padding-left: 0;
+  .inside-z {
+    top: 44% !important;
   }
 }
 

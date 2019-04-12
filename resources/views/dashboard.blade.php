@@ -118,4 +118,27 @@
         </div>
     </div>
 </section>
+
+{{-- <section>
+	<div class="container text-center py-5" style="overflow: hidden">
+		<div class="swiper-container-customers">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="p-4 text-center">
+                        <div class="p-3 d-table m-auto circle"><img src="../img/ac1.png" alt="../img/ac1.png"></div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="p-4 text-center">
+                        <div class="p-3 d-table m-auto circle"><img src="../img/ac2.png" alt="../img/ac2.png"></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="p-2"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+	</div>
+</section> --}}
 @endsection

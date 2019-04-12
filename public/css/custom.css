@@ -13,10 +13,6 @@ body {
   color: #b3b2b2 !important;
 }
 
-li .nav-item {
-  padding-right: 15px !important;
-}
-
 .scale-enter-active,
 .scale-leave-active {
   transition: all 0.3s;

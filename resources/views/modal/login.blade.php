@@ -5,8 +5,6 @@
                 <div class="container" style="position: relative; z-index: 25">
                     <div class=" justify-content-center mt-5">
                         <div class="loginHeader">{{ __('Login') }}</div>
-                        <a @click="add">clickme</a>
-                         <div>@{{ form }}</div>
                             <form v-on:submit.prevent="onSubmit">
                                 @csrf
                                 <div class="loginInputs form-group">

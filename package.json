@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "bootstrap-vue": "^2.0.0-rc.14",
+        "swiper": "^4.5.0",
         "vue-router": "^3.0.3"
     }
 }

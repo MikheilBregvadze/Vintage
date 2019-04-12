@@ -10,8 +10,8 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
             <ul class="navbar-nav mr-auto align-items-center">
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="navigation-circle nav-link " href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                <li class="nav-item">
+                    <a class="navigation-circle nav-link " href="/">
                         <div class="top">
                             <span></span>
                             <span></span>

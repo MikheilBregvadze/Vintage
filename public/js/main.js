@@ -15143,14 +15143,17 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _main_LoginComponent_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main/LoginComponent.js */ "./resources/js/main/LoginComponent.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _main_LoginComponent_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./main/LoginComponent.js */ "./resources/js/main/LoginComponent.js");
+
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.component('login-button', __webpack_require__(/*! ./buttons/LoginButton.vue */ "./resources/js/buttons/LoginButton.vue")["default"]);
 
 var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   components: {
-    LoginComponent: _main_LoginComponent_js__WEBPACK_IMPORTED_MODULE_1__["default"]
+    LoginComponent: _main_LoginComponent_js__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
@@ -15165,9 +15168,9 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Events__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../Events */ "./resources/js/Events.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Events__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Events */ "./resources/js/Events.js");
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -15186,24 +15189,19 @@ __webpack_require__.r(__webpack_exports__);
     onSubmit: function onSubmit() {
       var _this = this;
 
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post('/login', this.form).then(function (_ref) {
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('/login', this.form).then(function (_ref) {
         var data = _ref.data;
-        window.location.href = _this.test; // this.errors = {};
-
+        window.location.href = _this.test;
         console.log(window.location.href);
       })["catch"](function (errors) {
-        console.log(errors);
         _this.errors = errors.response.data.errors;
       });
-    },
-    add: function add() {
-      console.log(this.form);
     }
   },
   mounted: function mounted() {
     var _this2 = this;
 
-    _Events__WEBPACK_IMPORTED_MODULE_0__["default"].$on('login:open', function () {
+    _Events__WEBPACK_IMPORTED_MODULE_1__["default"].$on('login:open', function () {
       _this2.isVisible = true;
     });
   }

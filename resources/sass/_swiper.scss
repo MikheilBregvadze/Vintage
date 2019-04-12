@@ -1,0 +1,25 @@
+@import '~swiper/dist/css/swiper.css';
+
+.swiper-container-customers{
+    position: relative;
+}
+.swiper-pagination-bullet-active{
+    background: #6af0ff;
+}
+
+.swiper-default:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 1000px){
+    // .swiper-slide {
+    //     width: 100% !important;
+    // }
+    // .swipper-nav{
+    //     display: none;
+    // }
+    // .slides{
+    //   grid-column-start: 1;
+    //   grid-column-end: 7;
+    // }
+}
