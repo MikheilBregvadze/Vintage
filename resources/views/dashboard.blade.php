@@ -48,22 +48,22 @@
             <div class="row">
                 @foreach($product as $item)
                     <bike-component v-cloak inline-template>
-                            <div class="bike-box col-sm-12 col-md-4 col-xl-3" >
-                                <div class="hover-ball" v-on:click="showconfirmation({{$item}})">+</div>
-                                <div class="bike-box_img">
-                                    <img src="http://127.0.0.1:8001/img/product/{{ $item->id .'/'. $item->file }}" alt="picture">
-                                </div>
-                                <div class="bike-box_desc">
-                                    {{-- <a href="{{route('home.show', $item->id)}}"> --}}
-                                        <h4>{{ $item->title }}</h4>
-                                    {{-- </a> --}}
-                                    <p>{{ $item->description }}</p>
-                                </div>
-                                <div class="hidden d-flex justify-content-around align-content-center">
-                                    <div class="hidden-txt align-self-center">Buy Now</div>
-                                    <div class="arrow">></div>
-                                </div>
+                        <div class="bike-box col-sm-12 col-md-4 col-xl-3" >
+                            <div id="hoverBall" class="hover-ball" v-on:click="showconfirmation({{$item}})">+</div>
+                            <div class="bike-box_img">
+                                <img src="http://127.0.0.1:8001/img/product/{{ $item->id .'/'. $item->file }}" alt="picture">
                             </div>
+                            <div class="bike-box_desc">
+                                {{-- <a href="{{route('home.show', $item->id)}}"> --}}
+                                    <h4>{{ $item->title }}</h4>
+                                {{-- </a> --}}
+                                <p>{{ $item->description }}</p>
+                            </div>
+                            <div class="hidden d-flex justify-content-around align-content-center">
+                                <div class="hidden-txt align-self-center">Buy Now</div>
+                                <div class="arrow">></div>
+                            </div>
+                        </div>
                     </bike-component>
                 @endforeach
                 @include('modal.bike-modal')

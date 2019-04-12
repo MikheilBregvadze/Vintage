@@ -26,7 +26,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body id="appBody">
     <div id="app">
         @include("partials.header")
         <main class="py-4">

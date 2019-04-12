@@ -61708,7 +61708,8 @@ __webpack_require__.r(__webpack_exports__);
     return {
       id: Number,
       bikes: [],
-      cart: []
+      cart: [],
+      style: "hidden"
     };
   },
   methods: {

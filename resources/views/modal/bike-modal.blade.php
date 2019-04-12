@@ -1,17 +1,11 @@
 <modal-confirmation inline-template>
-    <div :class="{'modal-confirm': isVisible}" v-if="isVisible">
-        <div role="dialog">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                <p>Are you sure!</p>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-success" v-on:click="addToCart({{$item}})">Yes</button>
-                  <button type="button" class="btn btn-danger" v-on:click="closeModal">No</button>
-                </div>
-              </div>
+    <transition name="scale">
+        <div class="popUps" :class="{'show': isVisible}" v-if='isVisible' v-on:click.self="closeModal()">
+            <div class="login">
+                <div class="addCart">Add To Cart</div>
+                <button type="button" class="btn btn-success mt-4 px-4" v-on:click="addToCart({{$item}})">Yes</button>
+                <button type="button" class="btn btn-danger mt-4 px-4" id="nono" v-on:click="closeModal">No</button>
             </div>
         </div>
-    </div>
+    </transition>
 </modal-confirmation>

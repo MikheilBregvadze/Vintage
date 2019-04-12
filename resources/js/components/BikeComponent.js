@@ -6,6 +6,7 @@ export default {
             id: Number,
             bikes: [],
             cart: [],
+            style: "hidden"
         }
     },
     methods: {

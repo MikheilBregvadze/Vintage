@@ -34,12 +34,11 @@
                 @endguest
             </ul>
             <div class="logo">
-                <a href=""><div class="logoImg"></div></a>
+                <a href="/"><div class="logoImg"></div></a>
             </div>
             
             <ul class="navbar-nav ml-auto">
                 @guest
-                
                     <li class="nav-item">
                         <login-button :text="'Login'"/>
                         @if(!auth::user())
@@ -57,8 +56,8 @@
                 @else
                 
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                            {{ Auth::user()->name }} <span class="caret"></span>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="/dashboard" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            {{ Auth::user()->name }}<span class="caret"></span>
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
