@@ -23,7 +23,6 @@ export default {
             document.body.className = 'o-hidden';
         });
         
-        // localStorage.clear();
         var bike = '';
         if(items) {
             for(var i = 0; i < items.length; i++) {
@@ -39,6 +38,7 @@ export default {
         },
         addToCart() {
             this.isVisible = false;
+            document.body.className = 'o-visible';
             let products = this.cart
             let res = this.bikeItem
             var pushItem = false;

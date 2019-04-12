@@ -79,13 +79,15 @@ img {
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
     -webkit-transform: rotate(90deg);
-            transform: rotate(90deg); }
+            transform: rotate(90deg); 
+}
     
 .top {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    margin-left: 8.5px; }
+    margin-left: 8px; 
+}
     .top span {
     display: block;
     width: 8px;
@@ -100,7 +102,7 @@ img {
     
 .bottom {
     margin-top: 1px;
-    margin-left: 8.5px;
+    margin-left: 8px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }

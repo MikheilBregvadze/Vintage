@@ -2,7 +2,8 @@ body {
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    color: #fff9f9;
+	color: #fff9f9;
+	position: relative;
 }
 .navbar-nav {
     .nav-item {
@@ -116,8 +117,11 @@ body {
 .logoImg {
     filter: invert(1) brightness(100);
 }
-.footer-container {
-    padding-top: 560px;
+footer {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	padding: 0 15px;
 }
 .link {
     color: #b3b2b2 !important;
@@ -125,6 +129,13 @@ body {
 .inputStyle {
     padding-left: 5px !important;
     height: 50px !important;
+}
+.top {
+    margin-left: 7.5px; 
+}
+    
+.bottom {
+    margin-left: 7.5px;
 }
 // input:-webkit-autofill {
 //     box-shadow: inset 0 0 0 1000px transparent!important;

@@ -3,6 +3,7 @@ body {
   width: 100%;
   overflow: hidden;
   color: #fff9f9;
+  position: relative;
 }
 
 .navbar-nav .nav-item {
@@ -182,8 +183,11 @@ body {
           filter: invert(1) brightness(100);
 }
 
-.footer-container {
-  padding-top: 560px;
+footer {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  padding: 0 15px;
 }
 
 .link {
@@ -193,5 +197,13 @@ body {
 .inputStyle {
   padding-left: 5px !important;
   height: 50px !important;
+}
+
+.top {
+  margin-left: 7.5px;
+}
+
+.bottom {
+  margin-left: 7.5px;
 }
 
